@@ -44,10 +44,10 @@ class Address(models.Model):
     alt_phone=models.IntegerField()
     adress=models.TextField(max_length=250)
     city=models.CharField(max_length=50)
-    pin_code=models.IntegerField(max_length=6)
+    pin_code = models.CharField(max_length=6)
     state=models.CharField(max_length=100)
     land_mark=models.TextField(max_length=250,null=True,blank=True)
-    payment=models.CharField(default='COD')
+    payment = models.CharField(max_length=20, default='COD')
 
 class Order(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
