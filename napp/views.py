@@ -367,3 +367,37 @@ def wishlist(request):
     wishlist_items=Wishlist.objects.filter(user=request.user)
     count = wishlist_items.count()
     return render(request,'Wishlist.html',{'wish':wishlist_items,'count':count})
+import os
+import secrets
+
+from django.conf import settings
+from django.core.management import call_command
+from django.http import HttpResponse, HttpResponseForbidden
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
+
+
+@csrf_exempt
+@require_POST
+def import_products_once(request):
+    expected_token = os.environ.get("PRODUCT_IMPORT_TOKEN", "")
+    supplied_token = request.headers.get("X-Product-Import-Token", "")
+
+    if not expected_token or not secrets.compare_digest(
+        supplied_token, expected_token
+    ):
+        return HttpResponseForbidden("Invalid token")
+
+    fixture_path = (
+        settings.BASE_DIR / "napp" / "fixtures" / "nexad_products.json"
+    )
+
+    if not fixture_path.is_file():
+        return HttpResponse("Fixture file not found", status=500)
+
+    try:
+        call_command("loaddata", str(fixture_path), verbosity=0)
+    except Exception:
+        return HttpResponse("Import failed. Check Render logs.", status=500)
+
+    return HttpResponse("Product import completed.")

@@ -1,0 +1,251 @@
+[
+{
+  "model": "napp.category",
+  "pk": 1,
+  "fields": {
+    "category": "Speaker"
+  }
+},
+{
+  "model": "napp.category",
+  "pk": 2,
+  "fields": {
+    "category": "Headphone"
+  }
+},
+{
+  "model": "napp.category",
+  "pk": 3,
+  "fields": {
+    "category": "Ear Buds"
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name": "Marshall Willen II",
+    "c_image": "products/sm6_CeSM3iP.jpg",
+    "hover_image": "",
+    "c_desc": "17+ Hours Playtime, IP67 Waterproof, 10W Bluetooth Speaker",
+    "c_price": 21999
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 2,
+  "fields": {
+    "category": 2,
+    "name": "boAt Rockerz 413",
+    "c_image": "products/head3_x17tNsx.jpg",
+    "hover_image": "products/head3_hov_TwwmaKO.jpg",
+    "c_desc": "60H battery, ENx, BEAST Mode, Dual Pair, Bluetooth Headphone",
+    "c_price": 16999
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 3,
+  "fields": {
+    "category": 3,
+    "name": "REDMI Buds 6",
+    "c_image": "products/ear3_kOC0Skc.jpg",
+    "hover_image": "products/ear3_hov_8XPGp7H.jpg",
+    "c_desc": "49dB Hybrid ANC, Spatial Audio, Dual Driver Sound, Bluetooth Ear Buds",
+    "c_price": 2999
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 4,
+  "fields": {
+    "category": 1,
+    "name": "JBL Go 4",
+    "c_image": "products/sm5_ayO94IH.jpg",
+    "hover_image": "",
+    "c_desc": "Pro Sound Audio, IP67 Water & Dustproof, 7H Playtime, Bluetooth Speaker",
+    "c_price": 3499
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 5,
+  "fields": {
+    "category": 3,
+    "name": "Noise Ear Buds",
+    "c_image": "products/ear8_QjCAr8w.jpg",
+    "hover_image": "",
+    "c_desc": "Noise Buds VS102 Neo with 40 Hrs Playtime, ENC, Quad Mic Bluetooth Gaming Wireless Ear Buds",
+    "c_price": 2899
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 6,
+  "fields": {
+    "category": 2,
+    "name": "JBL Headphone",
+    "c_image": "products/head2.jpg",
+    "hover_image": "products/head2_hov.jpg",
+    "c_desc": "JBL Tune 770NC ANC, 70Hr Playtime, Fast Pair & Multi Connect Bluetooth Gaming Headphone (Black, On the Ear)",
+    "c_price": 5499
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 7,
+  "fields": {
+    "category": 1,
+    "name": "GOVO Goloud 980",
+    "c_image": "products/sm8_c3CEkIg.jpg",
+    "hover_image": "",
+    "c_desc": "160 W Bluetooth Party Speaker (Platinum Black, 2.0 Channel)",
+    "c_price": 8498
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 8,
+  "fields": {
+    "category": 2,
+    "name": "Marshall Major IV",
+    "c_image": "products/head5_t07OD28.jpg",
+    "hover_image": "",
+    "c_desc": "Bluetooth Headset (Black, On the Ear)",
+    "c_price": 11998
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 9,
+  "fields": {
+    "category": 3,
+    "name": "Samsung Galaxy Buds4 Pro",
+    "c_image": "products/ear1_bqhUXtO.jpg",
+    "hover_image": "",
+    "c_desc": "Hi-Fi Audio, Voice Detect, 2-way Speaker, Adaptive ANC 2.0 Bluetooth Ear Buds (Black, In the Ear)",
+    "c_price": 22998
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 10,
+  "fields": {
+    "category": 2,
+    "name": "Noise Airwave Max 4",
+    "c_image": "products/head4_7JY4ySX.jpg",
+    "hover_image": "",
+    "c_desc": "70 Hours Playtime,ENC wiith Dual pairing & Ultra-low latency Bluetooth Headset (Carbon Black, On the Ear)",
+    "c_price": 3499
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 11,
+  "fields": {
+    "category": 1,
+    "name": "Marshall Emberton II",
+    "c_image": "products/sm_m_KuhTIyf.jpg",
+    "hover_image": "",
+    "c_desc": "30+Hour Playtime, 360degree Sound, Waterproof 20 W Bluetooth Speaker (Black, Brass, Stereo Channel)",
+    "c_price": 14999
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 12,
+  "fields": {
+    "category": 3,
+    "name": "Samsung Galaxy Buds3 FE",
+    "c_image": "products/ear2_PjBnKUV.jpg",
+    "hover_image": "",
+    "c_desc": "Bluetooth Ear Buds (Black, True Wireless)",
+    "c_price": 11499
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 13,
+  "fields": {
+    "category": 1,
+    "name": "Bose New SoundLink Max",
+    "c_image": "products/sm8_cpNaBN5.jpg",
+    "hover_image": "",
+    "c_desc": "Large Waterproof Up to 20 Hours of Battery Life Bluetooth Speaker (Black, Mono Channel)",
+    "c_price": 37900
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 14,
+  "fields": {
+    "category": 2,
+    "name": "Bose QuietComfort Ultra",
+    "c_image": "products/headp_3xszz7z.jpg",
+    "hover_image": "",
+    "c_desc": "Bluetooth Headphones (2nd Gen) Bluetooth & Wired Headset (Black, On the Ear)",
+    "c_price": 49900
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 15,
+  "fields": {
+    "category": 3,
+    "name": "Nothing Ear (2) 2023",
+    "c_image": "products/nthng_jY42qAO.jpg",
+    "hover_image": "",
+    "c_desc": "Dual chamber sound | Hi-res audio | Smart ANC | Dual connection Bluetooth Ear Buds (Black, True Wireless)",
+    "c_price": 7999
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 16,
+  "fields": {
+    "category": 2,
+    "name": "boAt Rockerz 650 Pro(2025 Launch)",
+    "c_image": "products/head_last_wjkhsaS.jpg",
+    "hover_image": "",
+    "c_desc": "Touch/Swipe Controls, Dolby Audio, 80 Hrs Battery Bluetooth Headset (Iris Black, On the Ear)",
+    "c_price": 2799
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 17,
+  "fields": {
+    "category": 3,
+    "name": "Bose QuietComfort II",
+    "c_image": "products/ear_last_2koogQl.jpg",
+    "hover_image": "",
+    "c_desc": "Wireless,in-Ear Earbuds with Personalized Noise Cancellation Bluetooth Ear Buds (Black)",
+    "c_price": 14989
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 18,
+  "fields": {
+    "category": 1,
+    "name": "Alexa Echo (4th Gen)",
+    "c_image": "products/alexa_5yNPLRu.jpg",
+    "hover_image": "",
+    "c_desc": "Premium sound powered by Dolby and Alexa with Alexa Assistant Smart Speaker (Black)",
+    "c_price": 9998
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 19,
+  "fields": {
+    "category": 2,
+    "name": "Headphone",
+    "c_image": "products/head3_I9UDfx7.jpg",
+    "hover_image": "",
+    "c_desc": "Headphone",
+    "c_price": 12499
+  }
+}
+]

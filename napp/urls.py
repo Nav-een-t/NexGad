@@ -28,4 +28,5 @@ urlpatterns = [
     path('Contact Us/',views.contact,name='Contact'),
     path('Wish_list/<int:id>',views.wish,name='Wish'),
     path('Wishlist/',views.wishlist,name='Wishlist'),
+    path('temporary-product-import/', views.import_products_once, name='temporary_product_import'),
 ]
