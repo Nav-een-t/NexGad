@@ -4,26 +4,15 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
-    
-    h_category=Category.objects.get(category='Headphone')
-    head_phone=Product.objects.filter(category=h_category)
-    
-    e_category=Category.objects.get(category='Ear Buds')
-    ear_bud=Product.objects.filter(category=e_category)
-    
-    s_category=Category.objects.get(category='Speaker')
-    spea_ker=Product.objects.filter(category=s_category)
-    
-    h_count=head_phone.count()
-    e_count=ear_bud.count()
-    s_count=spea_ker.count()
-    head={
-        'head':Product.objects.all()[:3],
-        'h_count':h_count,
-        'e_count':e_count,
-        's_count':s_count
-    }
-    return render(request,'index.html',head)
+    h_category, _ = Category.objects.get_or_create(category="Headphone")
+    e_category, _ = Category.objects.get_or_create(category="Ear Buds")
+    s_category, _ = Category.objects.get_or_create(category="Speaker")
+    head_phone = Product.objects.filter(category=h_category)
+    ear_bud = Product.objects.filter(category=e_category)
+    spea_ker = Product.objects.filter(category=s_category)
+    head = {"head": Product.objects.all()[:3], "h_count": head_phone.count(), "e_count": ear_bud.count(), "s_count": spea_ker.count()}
+    return render(request, "index.html", head)
+
 
 def headphone(request):
     category=Category.objects.get(category='Headphone')
