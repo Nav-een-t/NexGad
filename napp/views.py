@@ -377,6 +377,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 
 
+
 @csrf_exempt
 @require_POST
 def import_products_once(request):
@@ -395,9 +396,61 @@ def import_products_once(request):
     if not fixture_path.is_file():
         return HttpResponse("Fixture file not found", status=500)
 
-    try:
-        call_command("loaddata", str(fixture_path), verbosity=0)
-    except Exception:
-        return HttpResponse("Import failed. Check Render logs.", status=500)
+    import json
+    from django.db import transaction
+    from .models import Category, Product
 
-    return HttpResponse("Product import completed.")
+    try:
+        with open(fixture_path, encoding="utf-8") as fixture_file:
+            records = json.load(fixture_file)
+
+        categories = {}
+        for record in records:
+            if record.get("model") != "napp.category":
+                continue
+
+            fields = record["fields"]
+            category, _ = Category.objects.get_or_create(
+                category=fields["category"]
+            )
+            categories[record["pk"]] = category
+
+        added = 0
+        updated = 0
+
+        with transaction.atomic():
+            for record in records:
+                if record.get("model") != "napp.product":
+                    continue
+
+                fields = record["fields"]
+                category = categories.get(fields["category"])
+
+                if category is None:
+                    raise ValueError("A product category is missing.")
+
+                product = Product.objects.filter(
+                    name=fields["name"]
+                ).first()
+
+                if product is None:
+                    Product.objects.create(
+                        category=category,
+                        name=fields["name"],
+                        c_image=fields["c_image"],
+                        hover_image=fields.get("hover_image"),
+                        c_desc=fields["c_desc"],
+                        c_price=fields["c_price"],
+                    )
+                    added += 1
+                else:
+                    updated += 1
+
+        return HttpResponse(
+            f"Import completed. Added: {added}; already present: {updated}."
+        )
+
+    except Exception:
+        return HttpResponse(
+            "Import failed. Check Render logs before retrying.", status=500
+        )
