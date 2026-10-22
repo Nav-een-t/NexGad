@@ -5,5 +5,7 @@ __pycache__/
 venv/
 nenv/
 db.sqlite3
-uploads/
+uploads/*
+!uploads/products/
+!uploads/products/**
 staticfiles/
