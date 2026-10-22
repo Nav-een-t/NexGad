@@ -1,0 +1,272 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #f2efe9 inset !important;
+    box-shadow: 0 0 0 1000px #f2efe9 inset !important;
+
+    -webkit-text-fill-color: #1c1c1e !important;
+
+    background-color: #f2efe9 !important;
+
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.address_head{
+    width: 100%;
+    height: 70px;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+}
+
+.address_head p{
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 35px;
+    color: #1c1c1e;
+    text-transform: uppercase;
+}
+
+input{
+    color: #d4af6a;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Arial',sans-serif;
+}
+input::placeholder{
+    color: #999999;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Arial',sans-serif;
+}
+.a_input{
+    max-width: 700px;
+    width: 95%;
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.a_input input{
+    width: 97%;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding-left: 20px;
+    background-color: #f2efe9;
+    color: #1c1c1e;
+}
+.a_input label{
+    color: rgb(156, 156, 156);
+    font-size: 11px;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+}
+
+.a_input input:focus{
+    outline: none;
+    border-color: #dedad4;
+    background-color: #f2efe9
+}
+
+.address{
+    max-width: 750px;
+    width: 90%;
+    border: 1px solid #e8c97a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    gap: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+
+.fl_name{
+    max-width: 700px;
+    width: 95%;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.f_name{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.f_name label{
+    color: rgb(156, 156, 156);
+    font-size: 11px;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+}
+.f_name input{
+    width: 320px ;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    padding-left: 20px;
+    background-color: #f2efe9;
+    color: #1c1c1e;
+}
+.f_name input:focus{
+    outline: none;
+    border-color: #dedad4;
+    background-color: #f2efe9
+}
+
+.ad{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px solid transparent;
+}
+.ad label{
+    color: rgb(156, 156, 156);
+    font-size: 11px;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+}
+.ad input{
+    width: 205px ;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    padding-left: 20px;
+    background-color: #f2efe9;
+    color: #1c1c1e;
+}
+.ad input:focus{
+    outline: none;
+    border-color: #dedad4;
+}
+.ad select{
+    width: 205px;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    padding-left: 45px;
+    background-color: #f2efe9;
+    color: #1c1c1e;
+    font-family: 'Arial',sans-serif;
+}
+.ad select:focus{
+    border-color: #dedad4;
+}
+.address_area{
+    max-width: 700px;
+    width: 95%;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.payment{
+    max-width: 680px;
+    width: 90%;
+    height: 85px;
+    border: 1px solid #e8c97a;
+    border-radius: 10px;  
+    padding-left: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f5f0e8;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.payment label{
+    color: rgb(156, 156, 156);
+    font-size: 11px;
+    font-weight: 600;
+    font-weight: 600;
+
+}
+.payment input{
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+.payment input:checked{
+    accent-color: #1c1c1e;
+}
+
+.payment p{
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.cod{
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: -5px;
+    color: #1c1c1e;
+}
+
+@media screen and (max-width: 781px) {
+    .fl_name{
+        flex-direction: column;
+        gap: 15px;
+        align-items: start;
+    }
+    .f_name{
+        width: 100%;
+    }
+    .f_name input{
+        width: 95%;
+    }
+    .a_input input{
+        width: 95%;
+    }
+    .address_area{
+        flex-direction: column;
+    }
+    .ad{
+        width: 100%;
+    }
+    .ad input{
+        width: 95%;
+    }
+    .ad select{
+        width: 98%;
+    }
+    
+}
+@media screen and (max-width: 450px) {
+    .address{
+        width: 95%;
+        border-radius: 5px;
+    }
+    .f_name{
+        width: 100%;
+    }
+    .f_name input{
+        width: 90%;
+    }
+    .a_input input{
+        width: 90%;
+    }
+    .ad input{
+        width: 90%;
+    }
+    .ad select{
+        width: 95%;
+    }
+    .payment{
+        width: 85%;
+    }
+}

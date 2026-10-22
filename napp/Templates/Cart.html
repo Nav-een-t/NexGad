@@ -1,0 +1,180 @@
+{% extends "Base.html" %}
+{% load static %}
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/cart.css' %}">
+<link rel="stylesheet" href="{% static 'css/order.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+{% endblock page_css %}
+
+{% block title %}
+Cart — NEXGAD
+{% endblock title %}
+
+{% block content %}
+<div class="cart">
+    <div class="order-head">
+        <div class="order-head-left">
+            <div class="order-head-txt">
+                <p>your selection</p>
+                <a class="coll">My <span class="coll_r">Cart</span></a>
+                <a>Review items before placing your order</a>
+            </div>
+        </div>
+        <div class="order-head-right">
+            <div class="order-head-count">
+                <a>{{ count }}</a>
+                <a>Items</a>
+            </div>
+            <div class="order-head-price">
+                <a>₹{{total}}</a>
+                <a>Total</a>
+            </div>
+        </div>
+    </div>
+    <div class="cart_item">
+        <div class="cart_item_left">
+
+            {% for item in items %}
+            <div class="cart_item_in">
+                <div class="cart_item_img">
+
+                    <img src="{{ item.product.c_image.url }}">
+                </div>
+                <div class="cart_item_desc">
+                    <p>{{ item.product.name }}</p>
+                </div>
+                <div class="cart_item_price">
+                    <p>Rs {{ item.product.c_price }}</p>
+                </div>
+                <div class="cart_item_quant">
+                    <div class="cart_item_quantity">
+                        <a href="{% url 'Dec' item.product.id %}">
+                            <div class="cart_quant_dc">
+                                -
+                            </div>
+                        </a>
+                        <div class="cart_quant_count">
+                            <a>{{ item.quantity }}</a>
+                        </div>
+                        <a href="{% url 'Inc' item.product.id %}">
+                            <div class="cart_quant_ic">
+                                +
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="cart_item_price">
+                    <p>Rs {{ item.total_price }}</p>
+                </div>
+                <div class="cart_item_del">
+                    <a href="{% url 'placeOrder' item.id %}">
+                        <button class="log">Buy Now</button>
+                    </a>
+                    <a href="{% url 'cart_del' item.id %}">
+                        <svg class="del" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="512" height="512" x="0" y="0" viewBox="0 0 24 24"
+                            style="enable-background:new 0 0 512 512" xml:space="preserve" class="hovered-paths">
+                            <g>
+                                <path
+                                    d="M16.707 8.707 13.414 12l3.293 3.293-1.414 1.414L12 13.414l-3.293 3.293-1.414-1.414L10.586 12 7.293 8.707l1.414-1.414L12 10.586l3.293-3.293 1.414 1.414ZM24 12c0 6.617-5.383 12-12 12S0 18.617 0 12 5.383 0 12 0s12 5.383 12 12Zm-2 0c0-5.514-4.486-10-10-10S2 6.486 2 12s4.486 10 10 10 10-4.486 10-10Z"
+                                    fill="currentColor" opacity="1" data-original="#000000" class="hovered-path"></path>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            {% empty %}
+            <div class="empty">
+                    <div class="img">
+                        <img src="{% static 'images/cart.png' %}" alt="">
+                    </div>
+                <a class="not">Your cart is empty.</a>
+                <div class="a2">
+                    <a>Looks like you haven't added anything to your cart yet. </a>
+                    <a>Explore our collections and find something you'll love. </a>
+                </div>
+                <a href="{% url 'All' %}" class="browse_a">
+                    <button class="browse">Browse Collections →</button>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="cart_item_right">
+            <div class="order-summary">
+                <div class="order-summary-head">
+                    <div class="order-summary-head-left">
+                        <a>ORDER SUMMARY</a>
+                    </div>
+                    <div class="order-summary-head-right">
+                        <a>{{ count }} items</a>
+                    </div>
+                </div>
+                <div class="order-summary_item">
+                    {% for item in items %}
+                    <div class="order-summary_item-in">
+                        <div class="order-summary-item-image">
+                            <img src="{{ item.product.c_image.url }}" alt="">
+                        </div>
+                        <div class="order-summary-item-name">
+                            <a>{{ item.product.name }}</a>
+                        </div>
+                        <div class="order-summary-item-price">
+                            <a>₹ {{ item.total_price }}</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="order-summary-item-total">
+                        <div class="order-summary-item-total_left">
+                            <a>TOTAL</a>
+                        </div>
+                        <div class="order-summary-item-total_right">
+                            <a>₹ {{total}}</a>
+                        </div>
+                    </div>
+                    <a href="{% url 'placeOrder' %}" class="place-order-a">
+                        <div class="place-order">
+                            PLACE ORDER
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="error-pop-up">
+    <div class="error-message">
+        <div class="error-message-top">
+            <div class="error-message-top-svg">
+                <a href="{% url 'cart_page' %}">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="512" height="512" x="0" y="0" viewBox="0 0 329.269 329"
+                        style="enable-background:new 0 0 512 512" xml:space="preserve">
+                        <g>
+                            <path
+                                d="M194.8 164.77 323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0"
+                                fill="#000000" opacity="1" data-original="#000000"></path>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="error-message-content">
+            <a>Please add items to the cart to place order!!!</a>
+        </div>
+    </div>
+</div>
+
+{% if order_error %}
+<script>
+
+    function errorr() {
+        document.querySelector(".error-pop-up").style.display = "flex";
+    }
+
+    errorr();  
+</script>
+
+{% endif %}
+
+{% endblock content %}

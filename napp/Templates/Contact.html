@@ -1,0 +1,114 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block title %}Contact — NEXGAD{% endblock title %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock page_css %}
+
+
+{% block content %}
+<section class="contact-page">
+
+    <div class="contact-eyebrow"><span>Get In Touch</span></div>
+    <h1 class="contact-title">We're Here to<br><span>Help You.</span></h1>
+
+    <div class="contact-grid">
+
+        <!-- Left: info cards -->
+        <div class="contact-left">
+            <div class="info-cards">
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="info-text-label">Email</div>
+                        <div class="info-text-val">support@nexgad.com</div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="info-text-label">Phone</div>
+                        <div class="info-text-val">+91 98765 43210</div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="info-text-label">Location</div>
+                        <div class="info-text-val">Kerala, India</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="hours-card">
+                <div class="hours-title">Support Hours</div>
+                <div class="hours-row"><span>Monday – Friday</span><span>9am – 7pm</span></div>
+                <div class="hours-row"><span>Saturday</span><span>10am – 5pm</span></div>
+                <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+            </div>
+        </div>
+
+        <div class="contact-form-card">
+            <form method="POST" action="{% url 'Contact' %}">
+                {% csrf_token %}
+                <div class="form-row-split">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" name="first_name" placeholder="First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" name="last_name" placeholder="Last Name" required>
+                    </div>
+                </div>
+                <div class="form-group-email">
+                    <label>Email Address</label>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <label>Subject</label>
+                    <select name="subject">
+                        <option value="" disabled selected>Select a topic…</option>
+                        <option value="order">Order Issue</option>
+                        <option value="product">Product Query</option>
+                        <option value="return">Return / Refund</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea name="message" placeholder="Tell us how we can help…" required></textarea>
+                </div>
+                {% if user.is_authenticated %}
+                <button type="submit" class="contact-submit-btn">Send Message</button>
+                {% else %}
+                <a href="{% url 'Login' %}">
+                    <button type="button" class="contact-submit-btn">Send Message</button>
+                </a>
+                {% endif %}
+                <p class="form-note">We typically respond within 24 hours.</p>
+            </form>
+        </div>
+
+    </div>
+</section>
+{% endblock content %}

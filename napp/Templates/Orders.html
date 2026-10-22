@@ -1,0 +1,94 @@
+{% extends "Base.html" %}
+{% load static %}
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/cart.css' %}">
+<link rel="stylesheet" href="{% static 'css/order.css' %}">
+{% endblock page_css %}
+{% block title %}
+Orders — NEXGAD
+{% endblock title %}
+
+{% block content %}
+<div class="cart">
+    <div class="order-head">
+        <div class="order-head-left">
+            <div class="order-head-txt">
+                <p>order history</p>
+                <a class="coll">My <span class="coll_right">Orders</span></a>
+                <a>{{ request.user.username }} — Track Your Orders</a>
+            </div>
+        </div>
+        <div class="order-head-right">
+            <div class="order-head-count">
+                <a>{{ count }}</a>
+                <a>Items</a>
+            </div>
+            <div class="order-head-price">
+                <a>₹{{ grand_total }}</a>
+                <a>Total</a>
+            </div>
+        </div>
+    </div>
+    <div class="order">
+        {% for i in orders %}
+        <div class="order_item">
+            <div class="order_top">
+                <div class="order-date">
+
+                    <p>Order Id : #{{ i.id }}</p>
+                    <p>Ordered on : {{ i.date_time|date:"d M Y, h:i A" }}</p>
+                </div>
+            </div>
+            <div class="order_mid">
+                <div class="order_mid_left">
+                    {% for item in i.items %}
+                    <div class="single_product_row">
+                        <div class="cart_item_img">
+                            <img src="{{ item.product.c_image.url }}" alt="">
+                        </div>
+                        <div class="order-item-details">
+                            <a>{{item.product.name}}</a>
+                            <a>{{item.product.category}}</a>
+                            <a>Qty: {{item.quantity}}</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="order_price">
+                    <a>TOTAL</a>
+                    <a>₹{{ i.total }}</a>
+                    <span class="order-status">● Confirmed</span>
+                </div>
+            </div>
+            {% if i.address %}
+            <div class="order_bottom">
+                <div class="order_bottom_left">
+                    <p class="order_bottom_label">Delivery Address</p>
+                    <p>{{ i.address.first_name }} {{ i.address.last_name }} — <br>{{ i.address.adress }}, <br> {{i.address.city }}, <br> {{ i.address.state }} - {{ i.address.pin_code }}</p>
+                </div>
+                <div class="order_bottom_right">
+                    <p class="order_bottom_label">Phone</p>
+                    <p>+91 {{ i.address.phone }}</p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% empty %}
+            <div class="empty">
+                <div class="img">
+                    <img src="{% static 'images/order.png' %}" alt="">
+                </div>
+                <a class="not">You haven't placed any order yet.</a>
+                <div class="a2">
+                    <a>Looks like you haven't made your first purchase yet. </a>
+                    <a>Explore our collections and find something you'll love. </a>
+                </div>
+                <a href="{% url 'All' %}" class="browse_a">
+                    <button class="browse">Browse Collections →</button>
+                </a>
+            </div>
+            
+        {% endfor %}
+    </div>
+    {% endblock content %}

@@ -1,0 +1,44 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block title %}Sign In — NEXGAD{% endblock title %}
+
+{% block content %}
+<div class="auth-page">
+    <div class="auth-section">
+
+        <div class="auth-left">
+            <div class="auth-eyebrow"><span>Welcome Back</span></div>
+            <h2 class="auth-title">Good to See<br>You <span>Again.</span></h2>
+            <p class="auth-sub">Sign in to access your orders, cart, and exclusive member offers.</p>
+            <div class="auth-perks">
+                <div class="perk"><div class="perk-dot"></div><span>Track your orders in real time</span></div>
+                <div class="perk"><div class="perk-dot"></div><span>Saved cart across devices</span></div>
+                <div class="perk"><div class="perk-dot"></div><span>Member-only deals and drops</span></div>
+            </div>
+        </div>
+
+        <div class="auth-right">
+            <div class="form-box">
+                <div class="form-box-title">Sign In</div>
+
+                <form method="POST" action="{% url 'Login' %}">
+                    {% csrf_token %}
+                    <div class="auth-fg">
+                        <label>Username</label>
+                        <input type="text" name="username" placeholder="your_username" required>
+                    </div>
+                    <div class="auth-fg">
+                        <label>Password</label>
+                        <input type="password" name="password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="auth-btn">Sign In</button>
+                </form>
+
+                <div class="auth-divider"><span>or</span></div>
+                <p class="auth-alt">Don't have an account? <a href="{% url 'SignUp' %}">Create one</a></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,110 @@
+{% extends "Base.html" %}
+
+{% block title %}
+Address
+{% endblock title %}
+
+{% load static %}
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/cart.css' %}">
+<link rel="stylesheet" href="{% static 'css/address.css' %}">
+{% endblock page_css %}
+
+{% block content %}
+<div class="cart">
+    <div class="address_head">
+        <p>Delivery Address</p>
+    </div>
+</div>
+{% if product_id %}
+<form action="{% url 'Address' product_id %}" method="POST">
+{% else %}
+<form action="{% url 'Address' %}" method="POST">
+{% endif %}
+    {% csrf_token %}
+    
+    <div class="address">
+        <div class="fl_name">
+            <div class="f_name">
+                <label for="">FIRST NAME <span style="color: red;">*</span></label>
+                <input type="text" name="first_name" placeholder="First Name" required>
+            </div>
+            <div class="f_name">
+                <label for="">LAST NAME <span style="color: red;">*</span></label>
+                <input type="text" name="last_name" placeholder="Last Name" required>
+            </div>
+        </div>
+        <div class="fl_name">
+            <div class="f_name">
+                <label for="">PHONE <span style="color: red;">*</span></label>
+                <input type="number" name="phone" placeholder="Phone Number" required>
+            </div>
+            <div class="f_name">
+                <label for="">ALTERNATE PHONE <span style="color: red;">*</span></label>
+                <input type="number" name="alt_phone" placeholder="Alternate Number" required>
+            </div>
+        </div>
+
+        <div class="a_input">
+            <label for="">ADDRESS <span style="color: red;">*</span></label>
+            <input type="text" name="address" placeholder="House/Flat No.,Building Name, Floor" required>
+        </div>
+        <div class="address_area">
+            <div class="ad">
+                <label for="">CITY <span style="color: red;">*</span></label>
+                <input type="text" name="city" placeholder="City" required>
+            </div>
+            <div class="ad">
+                <label for="">PINCODE <span style="color: red;">*</span></label>
+                <input type="number" name="pin_code" placeholder="Pincode" required>
+            </div>
+            <div class="ad">
+                <label for="">STATE <span style="color: red;">*</span></label>
+                <select name="state" required>
+                    <option value="" selected disabled>--- Select --- </option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarath">Gujarath</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="odisha">odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="West Bengal">West Bengal</option>
+                </select>
+            </div>
+        </div>
+        <div class="a_input">
+            <label for="">LANDMARK ( optional )</label>
+            <input type="text" name="landmark" placeholder="Near Metro, opposite School, etc.">
+        </div>
+
+        <div class="payment">
+            <label for="">PAYMENT METHOD</label><br>
+            <input type="radio" value="Cash On Delivery" name="cod"><span class="cod">Cash On Delivery <br></span>
+            <p>Pay with cash upon delivery of your order </p>
+        </div>
+
+        <button type="submit" class="sign-up">Submit</button>
+        
+    </div>
+</form>
+{% endblock content %}

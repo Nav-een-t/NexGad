@@ -1,0 +1,108 @@
+{% extends "Base.html" %}
+{% load static %}
+
+{% block title %}
+Products — NEXGAD
+{% endblock title %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/product.css' %}">
+{% endblock page_css %}
+
+{% block content %}
+<div class="products">
+    {% if data %}
+    <div class="order-head">
+        <div class="order-head-left">
+            <div class="order-head-txt">
+                <p>Premium Audio</p>
+                <a class="coll">The <span class="coll_r">Collection</span></a>
+                <a>Premium audio, curated for you</a>
+            </div>
+        </div>
+        <div class="order-head-right">
+            <div class="order-head-price">
+                <a>{{ q_count }}</a>
+                <a>Products</a>
+
+            </div>
+        </div>
+    </div>
+    <div class="prod_in">
+        {% for item in data %}
+
+        <a href="{% url 'Details' item.id %}" class="Det_page">
+
+            <div class="product">
+                <div class="product_img">
+                    <img src="{{item.c_image.url}}" alt="" class="prod">
+                </div>
+                <div class="product_desc">
+                    <p class="p-cat">{{item.category}}</p>
+                    <p class="p-name">{{item.name}}</p>
+                    <p class="p-desc">{{item.c_desc}}</p>
+                </div>
+                <div class="add_cart">
+                    <p class="p-price">₹{{item.c_price}}</p>
+                    <button>Buy Now</button>
+
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    {% elif query %}
+    <div class="no-product">
+        <div class="emp-img">
+            <img src="{% static 'images/empty.png' %}" alt="">
+        </div>
+        <p>No Products found matching your search !!!</p>
+        <p>Try different Keywords or explore our Collection</p>
+        <a href="{% url 'All' %}" class="browse_a">
+            <button class="browse">Explore Collections →</button>
+        </a>
+    </div>
+    {% else %}
+    <div class="order-head">
+        <div class="order-head-left">
+            <div class="order-head-txt">
+                <p>Premium Audio</p>
+                <a class="coll">The <span class="coll_r">Collection</span></a>
+                <a>Premium audio, curated for you</a>
+            </div>
+        </div>
+        <div class="order-head-right">
+            <div class="order-head-price">
+                <a>{{ count }}</a>
+                <a>Products</a>
+
+            </div>
+        </div>
+    </div>
+    <div class="prod_in">
+
+        {% for i in product %}
+        <a href="{% url 'Details' i.id %}" class="Det_page">
+
+            <div class="product">
+                <div class="product_img">
+                    <img src="{{i.c_image.url}}" alt="" class="prod">
+                </div>
+                <div class="product_desc">
+                    <p class="p-cat">{{i.category}}</p>
+                    <p class="p-name">{{i.name}}</p>
+                    <p class="p-desc">{{i.c_desc}}</p>
+                </div>
+                <div class="add_cart">
+                    <p class="p-price">₹{{i.c_price}}</p>
+                    <button>Buy Now</button>
+
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% endblock content %}

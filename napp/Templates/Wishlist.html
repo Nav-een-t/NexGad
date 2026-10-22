@@ -1,0 +1,56 @@
+{% extends "Base.html" %}
+{% load static %}
+
+{% block title %}
+Products — NEXGAD
+{% endblock title %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/wish.css' %}">
+{% endblock page_css %}
+
+{% block content %}
+<div class="products">
+    <div class="order-head">
+        <div class="order-head-left">
+            <div class="order-head-txt">
+                <p>Saved items</p>
+                <a class="coll">My <span class="coll_r">Wishlist</span></a>
+                <a>{{request.user.username}} — items you love</a>
+            </div>
+        </div>
+        <div class="order-head-right">
+            <div class="order-head-price">
+                <a>{{ count }}</a>
+                <a>Products</a>
+
+            </div>
+        </div>
+    </div>
+    <div class="prod_in">
+
+        {% for i in wish %}
+        <a href="{% url 'Details' i.product.id %}" class="Det_page">
+
+            <div class="product">
+                <div class="product_img">
+                    <img src="{{i.product.c_image.url}}" alt="" class="prod">
+                </div>
+                <div class="product_desc">
+                    <p class="p-cat">{{i.product.category}}</p>
+                    <p class="p-name">{{i.product.name}}</p>
+                    <p class="p-desc">{{i.product.c_desc}}</p>
+                </div>
+                <div class="add_cart">
+                    <p class="p-price">₹{{i.product.c_price}}</p>
+                    <button>Buy Now</button>
+
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock content %}

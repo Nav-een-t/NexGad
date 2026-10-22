@@ -1,0 +1,60 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block title %}About — NEXGAD{% endblock title %}
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock page_css %}
+{% block content %}
+<section class="about">
+
+    <div class="about-eyebrow"><span>Our Story</span></div>
+    <h2 class="about-title">Sound Is Not Just<br>Heard. It's <span>Felt.</span></h2>
+
+    <div class="about-grid">
+        <div>
+            <div class="about-body">
+                <p>NEXGAD was founded on a single belief — that premium audio should not be a privilege. We curate the finest headphones, earbuds, and speakers from the world's most trusted brands, delivering them directly to those who refuse to compromise.</p>
+                <p>Every product in our collection is hand-selected against a rigorous standard of acoustic performance, build quality, and lasting design. We don't sell gadgets. We sell experiences that stay with you.</p>
+            </div>
+            <div class="about-badge">Est. 2023 · Premium Audio</div>
+        </div>
+        <div class="about-stats">
+            <div class="stat-card">
+                <div class="stat-card-num">500+</div>
+                <div class="stat-card-label">Products</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-num">50K+</div>
+                <div class="stat-card-label">Customers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-num">4.9★</div>
+                <div class="stat-card-label">Avg Rating</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-num">30+</div>
+                <div class="stat-card-label">Top Brands</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-values">
+        <p class="values-title">What We Stand For</p>
+        <div class="values-grid">
+            <div class="value-item">
+                <div class="value-item-title">Curation</div>
+                <div class="value-item-desc">Every product is selected with intent — no fillers, no compromises.</div>
+            </div>
+            <div class="value-item">
+                <div class="value-item-title">Quality</div>
+                <div class="value-item-desc">We stock only brands that have proven themselves to audiophiles worldwide.</div>
+            </div>
+            <div class="value-item">
+                <div class="value-item-title">Trust</div>
+                <div class="value-item-desc">Transparent pricing, genuine products, and support that actually helps.</div>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock content %}

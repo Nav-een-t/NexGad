@@ -1,0 +1,359 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    {% block page_css %}{% endblock page_css %}
+</head>
+
+<body>
+    {% if not hide_nav %}
+    <div class="nav">
+        <div class="nav_left" onclick="clo()">
+            <!-- <img src="{% static 'images/NEXAD.jpg' %}" alt=""> -->
+            <a>NEX<span class="bl">GAD</span></a>
+        </div>
+        <div class="nav_right">
+            <a href="{% url 'Home' %}">Home</a>
+            <a href="{% url 'All' %}">Shop</a>
+            <a href="{% url 'cart_page' %}" class="menu_items">Cart</a>
+            <a href="{% url 'Orders' %}" class="menu_items">Orders</a>
+            <a href="{% url 'Wishlist' %}" class="menu_items">Wishlist</a>
+            <form action="{% url 'All' %}" method="GET">
+
+                <div class="search">
+                    <svg class="search-icon" width="24" height="24" class="" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>Search Icon</title>
+                        <path
+                            d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z"
+                            stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                        </path>
+                        <path d="M16 16L21 21" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                    </svg>
+                    <input type="text" placeholder="Search for Products, Brands..." name="q"
+                        value="{{ query|default:'' }}" spellCheck="false">
+                </div>
+            </form>
+        </div>
+
+        <div class="search-svg" onclick="clo()">
+            <svg onclick="search_bar()" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 24 24"
+                style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+                <g>
+                    <path
+                        d="m23.707 22.293-5.969-5.969a10.016 10.016 0 1 0-1.414 1.414l5.969 5.969a1 1 0 0 0 1.414-1.414ZM10 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8Z"
+                        fill="currentColor" opacity="1" data-original="#000000" class=""></path>
+                </g>
+            </svg>
+        </div>
+        <div class="m" onclick="list()">
+            <svg viewBox="0 0 20 20" fill="currentColor">
+                <rect x="2" y="4" width="16" height="1.8" rx="0.9" />
+                <rect x="2" y="9.1" width="16" height="1.8" rx="0.9" />
+                <rect x="7" y="14.2" width="11" height="1.8" rx="0.9" />
+            </svg>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if messages %}
+    {% for i in messages %}
+    <div class="message">
+        <p class="mess">{{ i }}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+
+
+    <div id="menu_list">
+        <div class="dd-header">
+            <p>My Account</p>
+        </div>
+        <a href="{% url 'Home' %}" class="menu_items">
+            <div class="menu_item">
+                <div class="menu_icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="512" height="512" x="0" y="0" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512" xml:space="preserve">
+                        <g>
+                            <path
+                                d="m498.195 222.695-.035-.035L289.305 13.813C280.402 4.905 268.566 0 255.977 0c-12.59 0-24.426 4.902-33.332 13.809L13.898 222.55c-.07.07-.14.144-.21.215-18.282 18.386-18.25 48.218.09 66.558 8.378 8.383 19.445 13.238 31.277 13.746.48.047.965.07 1.453.07h8.324v153.7C54.832 487.254 79.578 512 110 512h81.71c8.282 0 15-6.715 15-15V376.5c0-13.879 11.29-25.168 25.169-25.168h48.195c13.88 0 25.168 11.29 25.168 25.168V497c0 8.285 6.715 15 15 15h81.711c30.422 0 55.168-24.746 55.168-55.16v-153.7h7.719c12.586 0 24.422-4.902 33.332-13.808 18.36-18.371 18.367-48.254.023-66.637zm0 0"
+                                fill="currentColor" opacity="1" data-original="#000000"></path>
+                        </g>
+                    </svg>
+                </div>
+                <span class="menu_label">Home</span>
+                <span class="menu_arrow">›</span>
+            </div>
+        </a>
+        <a href="{% url 'All' %}" class="menu_items">
+            <div class="menu_item">
+                <div class="menu_icon">
+                    <svg viewBox="0 0 64 64" fill="currentColor">
+                        <path
+                            d="M25.308 61.679c-3.514 0-6.373-2.859-6.373-6.373s2.859-6.372 6.373-6.372 6.373 2.858 6.373 6.372-2.859 6.373-6.373 6.373zm0-8.745a2.375 2.375 0 0 0-2.373 2.372c0 1.309 1.064 2.373 2.373 2.373s2.373-1.064 2.373-2.373a2.375 2.375 0 0 0-2.373-2.372zM47.462 61.679c-3.514 0-6.372-2.859-6.372-6.373s2.858-6.372 6.372-6.372 6.373 2.858 6.373 6.372-2.86 6.373-6.373 6.373zm0-8.745a2.375 2.375 0 0 0-2.372 2.372 2.375 2.375 0 0 0 2.372 2.373 2.375 2.375 0 0 0 2.373-2.373 2.375 2.375 0 0 0-2.373-2.372zM52.128 43.994H20.709a6.482 6.482 0 0 1-6.35-5.061L7.838 10.456a1.264 1.264 0 0 0-.696-.86L1.733 7.089a2.5 2.5 0 0 1 2.102-4.536L9.244 5.06a6.293 6.293 0 0 1 3.468 4.28l6.521 28.479a1.506 1.506 0 0 0 1.476 1.176h31.419a1.51 1.51 0 0 0 1.476-1.171l5.07-21.813a1.488 1.488 0 0 0-.288-1.284 1.49 1.49 0 0 0-1.186-.572h-37a2.5 2.5 0 1 1 0-5h37c1.999 0 3.857.897 5.101 2.462s1.696 3.579 1.244 5.526l-5.071 21.814a6.489 6.489 0 0 1-6.346 5.037z" />
+                    </svg>
+                </div>
+                <span class="menu_label">Shop</span>
+                <span class="menu_arrow">›</span>
+            </div>
+
+
+            <a href="{% url 'cart_page' %}" class="menu_items">
+                <div class="menu_item">
+                    <div class="menu_icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="512" height="512" x="0" y="0" viewBox="0 0 24 24"
+                            style="enable-background:new 0 0 512 512" xml:space="preserve">
+                            <g>
+                                <path
+                                    d="M21 6h-3A6 6 0 0 0 6 6H3a3 3 0 0 0-3 3v10a5.006 5.006 0 0 0 5 5h14a5.006 5.006 0 0 0 5-5V9a3 3 0 0 0-3-3Zm-9-4a4 4 0 0 1 4 4H8a4 4 0 0 1 4-4Zm10 17a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V9a1 1 0 0 1 1-1h3v2a1 1 0 0 0 2 0V8h8v2a1 1 0 0 0 2 0V8h3a1 1 0 0 1 1 1Z"
+                                    fill="currentColor" opacity="1" data-original="#000000"></path>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="menu_label">Cart</span>
+                    <span class="menu_arrow">›</span>
+                </div>
+            </a>
+
+            <a href="{% url 'Orders' %}" class="menu_items">
+                <div class="menu_item">
+                    <div class="menu_icon">
+                        <svg viewBox="0 0 88 88" fill="currentColor">
+                            <path
+                                d="m26.133 32.475 4.198 2.269 35.948-19.431-7.558-4.085-35.949 19.431zM25.5 44.672a1.001 1.001 0 0 1 .817.424l3.013 4.271v-12.89l-5.85-3.162-1.81-.978v13.571l3.51-1.184a1.004 1.004 0 0 1 .32-.052zM68.382 16.45 32.433 35.881 44 42.134l35.948-19.432zM20.669 29.522l35.949-19.431L44 3.27 8.052 22.702z" />
+                            <path
+                                d="m43 43.867-11.67-6.308V52.52a1 1 0 0 1-1.817.576l-4.4-6.238-4.124 1.39a1 1 0 0 1-1.319-.948V31.256L7 24.407V65.27l36 19.46zM45 43.866V84.73l36-19.46V24.407z" />
+                        </svg>
+                    </div>
+                    <span class="menu_label">Orders</span>
+                    <span class="menu_arrow">›</span>
+                </div>
+            </a>
+
+            <a href="{% url 'Wishlist' %}" class="menu_items">
+                <div class="menu_item">
+                    <div class="menu_icon">
+                        <svg xmlns="http://www.w3.org/2000/sv
+                        g" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="512" height="512" x="0" y="0" viewBox="0 0 512.001 512"
+                            style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+                            <g>
+                                <path
+                                    d="M256 455.516c-7.29 0-14.316-2.641-19.793-7.438-20.684-18.086-40.625-35.082-58.219-50.074l-.09-.078c-51.582-43.957-96.125-81.918-127.117-119.313C16.137 236.81 0 197.172 0 153.871c0-42.07 14.426-80.883 40.617-109.293C67.121 15.832 103.488 0 143.031 0c29.555 0 56.621 9.344 80.446 27.77C235.5 37.07 246.398 48.453 256 61.73c9.605-13.277 20.5-24.66 32.527-33.96C312.352 9.344 339.418 0 368.973 0c39.539 0 75.91 15.832 102.414 44.578C497.578 72.988 512 111.801 512 153.871c0 43.3-16.133 82.938-50.777 124.738-30.993 37.399-75.532 75.356-127.106 119.309-17.625 15.016-37.597 32.039-58.328 50.168a30.046 30.046 0 0 1-19.789 7.43zM143.031 29.992c-31.066 0-59.605 12.399-80.367 34.914-21.07 22.856-32.676 54.45-32.676 88.965 0 36.418 13.535 68.988 43.883 105.606 29.332 35.394 72.961 72.574 123.477 115.625l.093.078c17.66 15.05 37.68 32.113 58.516 50.332 20.961-18.254 41.012-35.344 58.707-50.418 50.512-43.051 94.137-80.223 123.469-115.617 30.344-36.618 43.879-69.188 43.879-105.606 0-34.516-11.606-66.11-32.676-88.965-20.758-22.515-49.3-34.914-80.363-34.914-22.758 0-43.653 7.235-62.102 21.5-16.441 12.719-27.894 28.797-34.61 40.047-3.452 5.785-9.53 9.238-16.261 9.238s-12.809-3.453-16.262-9.238c-6.71-11.25-18.164-27.328-34.61-40.047-18.448-14.265-39.343-21.5-62.097-21.5zm0 0"
+                                    fill="currentColor" opacity="1" data-original="#000000" class=""></path>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="menu_label">Wishlist</span>
+                    <span class="menu_arrow">›</span>
+                </div>
+            </a>
+
+            <a href="{% url 'profile_page' %}" class="menu_items">
+                <div class="menu_item">
+                    <div class="menu_icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12 1.25C6.063 1.25 1.25 6.063 1.25 12S6.063 22.75 12 22.75 22.75 17.937 22.75 12 17.937 1.25 12 1.25zm-.009 5A3.252 3.252 0 0 0 8.739 9.5c0 1.796 1.458 3.25 3.254 3.25s3.253-1.454 3.253-3.25a3.252 3.252 0 0 0-3.253-3.25zm.009 8a7.947 7.947 0 0 0-5.52 2.209.75.75 0 0 0 0 1.082A7.947 7.947 0 0 0 12 19.75a7.947 7.947 0 0 0 5.52-2.209.75.75 0 0 0 0-1.082A7.947 7.947 0 0 0 12 14.25z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <span class="menu_label">Account</span>
+                    <span class="menu_arrow">›</span>
+                </div>
+            </a>
+
+
+        </a>
+
+        <div class="menu_divider"></div>
+        {% if user.is_authenticated %}
+        <a href="{% url 'Logout' %}" class="menu_items">
+            <div class="menu_item menu_item_danger">
+                <div class="menu_icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                        <polyline points="16 17 21 12 16 7" />
+                        <line x1="21" y1="12" x2="9" y2="12" />
+                    </svg>
+                </div>
+                <span class="menu_label">Log out</span>
+                <span class="menu_arrow">›</span>
+            </div>
+        </a>
+        {% else %}
+        <a href="{% url 'Login' %}" class="menu_items">
+            <div class="menu_item menu_item_login">
+                <div class="menu_icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M15 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3" />
+                        <path d="M10 17l5-5-5-5" />
+                        <path d="M15 12H3" />
+                    </svg>
+                </div>
+                <span class="menu_label">Log in</span>
+                <span class="menu_arrow">›</span>
+            </div>
+        </a>
+    </div>
+    {% endif %}
+    </div>
+
+
+
+    <div onclick="clo()">
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+
+    {% if not hide_nav %}
+    <footer class="footer">
+        <div class="footer-top">
+            <div>
+                <a href="{% url 'Home' %}" class="footer-brand-logo">NEX<span class="bl">GAD</span></a>
+                <p class="footer-brand-desc">Premium audio gadgets for those who hear the difference. Curated
+                    collections, uncompromising quality.</p>
+                <div class="footer-social">
+                    <div class="social-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                        </svg>
+                    </div>
+                    <div class="social-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </div>
+                    <div class="social-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <span class="footer-col-title">Shop</span>
+                <a href="{% url 'Headphone' %}">Headphones</a>
+                <a href="{% url 'Earbud' %}">Earbuds</a>
+                <a href="{% url 'Speaker' %}">Speakers</a>
+                <a href="{% url 'All' %}">All Products</a>
+            </div>
+            <div class="footer-col">
+                <span class="footer-col-title">Account</span>
+                {% if user.is_authenticated %}
+                <a href="{% url 'profile_page' %}">My Profile</a>
+                <a href="{% url 'Orders' %}">My Orders</a>
+                <a href="{% url 'cart_page' %}">Cart</a>
+                <a href="{% url 'Wishlist' %}">Wishlist</a>
+                <a href="{% url 'Logout' %}">Log Out</a>
+                {% else %}
+                <a href="{% url 'Login' %}">Sign In</a>
+                <a href="{% url 'Login' %}">Register</a>
+                {% endif %}
+            </div>
+
+            <div class="footer-col">
+                <span class="footer-col-title">Support</span>
+                <a href="{% url 'About' %}">About Us</a>
+                <a href="{%  url 'Contact' %}">Contact</a>
+                <a href="#">Returns</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025 NEXGAD. All rights reserved.</span>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
+        </div>
+    </footer>
+    {% endif %}
+
+
+    <div class="search-pop">
+        <form action="{% url 'All' %}" method="GET">
+
+            <div class="search-mob">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512"
+                    xml:space="preserve" class="">
+                    <g>
+                        <path
+                            d="m23.707 22.293-5.969-5.969a10.016 10.016 0 1 0-1.414 1.414l5.969 5.969a1 1 0 0 0 1.414-1.414ZM10 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8Z"
+                            fill="currentColor" opacity="1" data-original="#000000" class=""></path>
+                    </g>
+                </svg>
+                <input type="text" placeholder="Search for Products, Brands..." name="q" value="{{ query|default:'' }}"
+                    spellCheck="false">
+            </div>
+        </form>
+        <div class="search-pop-rest" onclick="search_clo()"></div>
+    </div>
+
+
+
+    <script>
+
+        function clo() {
+            const menu_list = document.getElementById('menu_list')
+            menu_list.style.display = 'none'
+        }
+        function list() {
+            const menu_list = document.getElementById('menu_list')
+            if (menu_list.style.display === 'flex') {
+                menu_list.style.display = 'none'
+            }
+            else {
+                menu_list.style.display = 'flex'
+            }
+
+        }
+
+        setTimeout(function () {
+
+            document.querySelector(".message").style.display = "none";
+
+        }, 2000);
+
+
+        function search_bar() {
+            search = document.querySelector('.search-pop')
+            search.style.display = 'flex'
+        }
+
+        function search_clo() {
+            search = document.querySelector('.search-pop')
+            search.style.display = 'none'
+        }
+
+    </script>
+
+    {% block page_script %}{% endblock page_script %}
+</body>
+
+</html>
+
+<!-- if user.login is authenticated -->

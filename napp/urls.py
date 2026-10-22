@@ -1,0 +1,31 @@
+from django.urls import path
+from .import views
+
+urlpatterns = [
+    path('',views.index,name='Home'),
+    path('Headphones/',views.headphone,name='Headphone'),
+    path('Earbuds/',views.earbud,name='Earbud'),
+    path('Speakers/',views.speaker,name='Speaker'),
+    path('SignUp/',views.userRegister,name='SignUp'),
+    path('Login/',views.user_login,name='Login'),
+    path('Logout/', views.Log_out, name='Logout'),
+    path('cart/<int:id>',views.cart_s, name='Cart'),
+    path('cart/', views.cart_page, name='cart_page'),
+    path('cart_del/<int:id>', views.cart_delete, name='cart_del'),
+    path('ProfileForm/',views.ProfileForm,name='profileform'),  
+    path('Profile/',views.profile,name='profile_page'),
+    path('Products/',views.all_items,name='All'),
+    path('boAT/',views.boat_fil,name='boat'),
+    path('Details/<int:id>',views.product_details,name='Details'),
+    path('cart/inc/<int:id>',views.inc,name='Inc'),
+    path('cart/dec/<int:id>',views.dec,name='Dec'),
+    path('Orders/',views.order,name='Orders'),
+    path('Address/',views.address,name='Address'),
+    path('Address/<int:id>',views.address,name='Address'),
+    path('Ordered Successfully/',views.place_order,name='placeOrder'),
+    path('Ordered Successfully/<int:id>',views.place_order,name='placeOrder'),
+    path('About Us/',views.about,name='About'),
+    path('Contact Us/',views.contact,name='Contact'),
+    path('Wish_list/<int:id>',views.wish,name='Wish'),
+    path('Wishlist/',views.wishlist,name='Wishlist'),
+]

@@ -1,0 +1,151 @@
+{% extends "Base.html" %}
+{% load static %}
+
+{% block title %}
+Product Details
+{% endblock title %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/details.css' %}">
+{% endblock page_css %}
+
+{% block content %}
+<div class="details">
+  <div class="details_left">
+    <div class="details_img">
+      <a href="{% url 'Wish' products.id %}">
+        <div class="wish">
+          {% if wished %}
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512"
+          height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve"
+          class="">
+          <g>
+            <path
+              d="M471.383 44.578C444.879 15.832 408.512 0 368.973 0c-29.555 0-56.621 9.344-80.45 27.77C276.5 37.07 265.605 48.45 256 61.73c-9.602-13.277-20.5-24.66-32.527-33.96C199.648 9.344 172.582 0 143.027 0c-39.539 0-75.91 15.832-102.414 44.578C14.426 72.988 0 111.801 0 153.871c0 43.3 16.137 82.938 50.781 124.742 30.992 37.395 75.535 75.356 127.117 119.313 17.614 15.012 37.579 32.027 58.309 50.152A30.023 30.023 0 0 0 256 455.516c7.285 0 14.316-2.641 19.785-7.43 20.73-18.129 40.707-35.152 58.328-50.172 51.575-43.95 96.117-81.906 127.11-119.305C495.867 236.81 512 197.172 512 153.867c0-42.066-14.426-80.879-40.617-109.289zm0 0"
+              fill="red" opacity="1" data-original="#000000" class=""></path>
+            </g>
+          </svg>
+          {% else %}
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path
+          d="M21.196 11.4057C21.3096 11.1653 22.4159 8.76955 21.1429 6.31952C21.0141 6.06366 19.7866 3.7842 17.271 3.49733C15.2327 3.26473 13.1489 4.46649 11.9896 6.56762C10.5727 4.2649 8.16313 3.11742 6.02635 3.62138C4.3139 4.03231 3.0485 5.43565 2.54083 6.84674C1.22239 10.483 4.73822 14.5612 6.06424 16.0964C8.0722 18.4224 10.3226 19.7559 11.9821 20.5312C12.467 20.3064 12.9898 20.0273 13.5278 19.6784C13.846 19.4768 14.134 19.2675 14.4068 19.0659"
+          stroke="#333333ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+          <path d="M18.0938 12V19.3125" stroke="#333333ff" stroke-width="1.4" stroke-linecap="round"
+            stroke-linejoin="round"></path>
+          <path d="M14.4375 15.6562H21.75" stroke="#333333ff" stroke-width="1.4" stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+        {% endif %}
+      </div>
+        </a>
+      <img src="{{ products.c_image.url }}" alt="{{ products.name }}" id="main-img">
+    </div>
+
+    <div class="details_thumbs">
+      <div class="details_thumb active">
+        <img src="{{ products.c_image.url }}" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="details_right">
+    <div class="details_cat">{{ products.category }}</div>
+    <div class="details_desc">
+      <p>{{ products.c_desc }}</p>
+    </div>
+    <div class="det-divider"></div>
+
+    <div class="det">
+      <div class="details_price">₹{{ products.c_price }}</div>
+      <span class="details_off">PREMIUM</span>
+    </div>
+
+    <div class="rating">
+      <span class="rating-stars">★★★★☆</span>
+      <span class="rating-num">4.5</span>
+      <div class="rating-dot"></div>
+      <span class="rating-count">81 reviews</span>
+    </div>
+
+    <!-- Specs -->
+    <div class="details_specs">
+      <div class="spec_item">
+        <div class="spec_key">Category</div>
+        <div class="spec_val">{{ products.category }}</div>
+      </div>
+      <div class="spec_item">
+        <div class="spec_key">Warranty</div>
+        <div class="spec_val">2 Years</div>
+      </div>
+      <div class="spec_item">
+        <div class="spec_key">Availability</div>
+        <div class="spec_val">In Stock</div>
+      </div>
+      <div class="spec_item">
+        <div class="spec_key">Return Policy</div>
+        <div class="spec_val">7 Days</div>
+      </div>
+    </div>
+
+    <!-- Qty -->
+
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <div class="add_to_cart">
+        {% if user.is_authenticated %}
+        <a href="{% url 'Cart' products.id %}">
+          <button><svg viewBox="0 0 64 64" fill="currentColor">
+              <path
+                d="M25.308 61.679c-3.514 0-6.373-2.859-6.373-6.373s2.859-6.372 6.373-6.372 6.373 2.858 6.373 6.372-2.859 6.373-6.373 6.373zm0-8.745a2.375 2.375 0 0 0-2.373 2.372c0 1.309 1.064 2.373 2.373 2.373s2.373-1.064 2.373-2.373a2.375 2.375 0 0 0-2.373-2.372zM47.462 61.679c-3.514 0-6.372-2.859-6.372-6.373s2.858-6.372 6.372-6.372 6.373 2.858 6.373 6.372-2.86 6.373-6.373 6.373zm0-8.745a2.375 2.375 0 0 0-2.372 2.372 2.375 2.375 0 0 0 2.372 2.373 2.375 2.375 0 0 0 2.373-2.373 2.375 2.375 0 0 0-2.373-2.372zM52.128 43.994H20.709a6.482 6.482 0 0 1-6.35-5.061L7.838 10.456a1.264 1.264 0 0 0-.696-.86L1.733 7.089a2.5 2.5 0 0 1 2.102-4.536L9.244 5.06a6.293 6.293 0 0 1 3.468 4.28l6.521 28.479a1.506 1.506 0 0 0 1.476 1.176h31.419a1.51 1.51 0 0 0 1.476-1.171l5.07-21.813a1.488 1.488 0 0 0-.288-1.284 1.49 1.49 0 0 0-1.186-.572h-37a2.5 2.5 0 1 1 0-5h37c1.999 0 3.857.897 5.101 2.462s1.696 3.579 1.244 5.526l-5.071 21.814a6.489 6.489 0 0 1-6.346 5.037z" />
+            </svg> Add to Cart</button>
+        </a>
+        {% else %}
+        <a href="{% url 'Login' %}">
+          <button><svg viewBox="0 0 64 64" fill="currentColor">
+              <path
+                d="M25.308 61.679c-3.514 0-6.373-2.859-6.373-6.373s2.859-6.372 6.373-6.372 6.373 2.858 6.373 6.372-2.859 6.373-6.373 6.373zm0-8.745a2.375 2.375 0 0 0-2.373 2.372c0 1.309 1.064 2.373 2.373 2.373s2.373-1.064 2.373-2.373a2.375 2.375 0 0 0-2.373-2.372zM47.462 61.679c-3.514 0-6.372-2.859-6.372-6.373s2.858-6.372 6.372-6.372 6.373 2.858 6.373 6.372-2.86 6.373-6.373 6.373zm0-8.745a2.375 2.375 0 0 0-2.372 2.372 2.375 2.375 0 0 0 2.372 2.373 2.375 2.375 0 0 0 2.373-2.373 2.375 2.375 0 0 0-2.373-2.372zM52.128 43.994H20.709a6.482 6.482 0 0 1-6.35-5.061L7.838 10.456a1.264 1.264 0 0 0-.696-.86L1.733 7.089a2.5 2.5 0 0 1 2.102-4.536L9.244 5.06a6.293 6.293 0 0 1 3.468 4.28l6.521 28.479a1.506 1.506 0 0 0 1.476 1.176h31.419a1.51 1.51 0 0 0 1.476-1.171l5.07-21.813a1.488 1.488 0 0 0-.288-1.284 1.49 1.49 0 0 0-1.186-.572h-37a2.5 2.5 0 1 1 0-5h37c1.999 0 3.857.897 5.101 2.462s1.696 3.579 1.244 5.526l-5.071 21.814a6.489 6.489 0 0 1-6.346 5.037z" />
+            </svg> Add to Cart</button>
+        </a>
+        {% endif %}
+      </div>
+
+    </div>
+
+
+    <div class="trust">
+      <p><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <rect x="1" y="3" width="15" height="13" rx="1" />
+          <path d="M16 8h4l3 5v3h-7V8z" />
+          <circle cx="5.5" cy="18.5" r="2.5" />
+          <circle cx="18.5" cy="18.5" r="2.5" />
+        </svg>Free Delivery</p>
+      <p><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512"
+          height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve">
+          <g>
+            <path fill-rule="evenodd"
+              d="M443.684 267.985c0 107.334-87.012 194.346-194.345 194.346A194.339 194.339 0 0 1 73.133 350.024a24.3 24.3 0 0 0-22.509-14.305 24.3 24.3 0 0 0-22.443 14.405 25.043 25.043 0 0 0 .209 21.555A244.043 244.043 0 0 0 249.339 512c134.761 0 244.014-109.249 244.014-244.015S384.1 23.971 249.339 23.971A243.341 243.341 0 0 0 71.2 101.221L68.85 24.34a25.107 25.107 0 1 0-50.191 1.537l4.151 135.607a25.053 25.053 0 0 0 8.613 18.13 25.055 25.055 0 0 0 18.623 7.486l135.607-4.151a25.107 25.107 0 1 0-1.536-50.191L107.53 135.1a193.789 193.789 0 0 1 141.809-61.461c107.333 0 194.345 87.012 194.345 194.346z"
+              fill="currentColor" opacity="1" data-original="#000000"></path>
+          </g>
+        </svg>7 Day Return</p>
+      <p><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        </svg>2 Year Warranty</p>
+      <p><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512"
+          height="512" x="0" y="0" viewBox="0 0 507.506 507.506" style="enable-background:new 0 0 512 512"
+          xml:space="preserve">
+          <g>
+            <path
+              d="M163.865 436.934a54.228 54.228 0 0 1-38.4-15.915L9.369 304.966c-12.492-12.496-12.492-32.752 0-45.248 12.496-12.492 32.752-12.492 45.248 0l109.248 109.248L452.889 79.942c12.496-12.492 32.752-12.492 45.248 0 12.492 12.496 12.492 32.752 0 45.248L202.265 421.019a54.228 54.228 0 0 1-38.4 15.915z"
+              fill="currentColor" opacity="1" data-original="#000000"></path>
+          </g>
+        </svg>100% Genuine</p>
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}

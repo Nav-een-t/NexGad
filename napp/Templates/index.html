@@ -1,0 +1,339 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block title %}
+NEXGAD — Premium Audio
+{% endblock title %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/pop.css' %}">
+{% endblock page_css %}
+
+{% block content %}
+<div class="img">
+    <div class="img_left">
+
+        <div class="img_head">
+            <span class="badge-dot"></span>
+            <p>PREMIUM COLLECTION</p>
+        </div>
+
+        <div class="img_p">
+            <div class="img_p1">
+                <h1>Sounds Like <em>Never Before</em></h1>
+            </div>
+            <div class="img_divider"></div>
+            <div class="img_p2">
+                <p>Exclusive gadgets. Uncompromising quality.</p>
+            </div>
+        </div>
+
+        <div class="img_btn">
+            <a href="#category">
+                <button class="btn-primary">SHOP NOW</button>
+            </a>
+            <a href="{% url 'All' %}">
+                <button class="btn-outline">EXPLORE</button>
+            </a>
+        </div>
+
+        <div class="img_trust">
+            <div class="trust-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7a5c3a" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+                2-year warranty
+            </div>
+            <div class="trust-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7a5c3a" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13" rx="1" />
+                    <path d="M16 8h4l3 5v3h-7V8z" />
+                    <circle cx="5.5" cy="18.5" r="2.5" />
+                    <circle cx="18.5" cy="18.5" r="2.5" />
+                </svg>
+                Free shipping
+            </div>
+            <div class="trust-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7a5c3a" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+                4.9 / 5 rating
+            </div>
+        </div>
+
+    </div>
+    <a href="{% url 'boat' %}" class="boat">
+        <div class="img_right">
+            <div class="img-right-img">
+                <img src="{% static 'images/head3.jpg' %}" alt="">
+            </div>
+
+            <div class="img_ex">
+                <div class="img_ex_t">
+                    <p>EXCLUSIVE</p>
+                </div>
+                <div class="img_ex_c">
+                    <p>boAT Rockerz 413</p>
+                </div>
+                <div class="img_ex_b">
+                    <p>Rs 16,999</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<div id="category">
+    <div class="cate_hd">
+        <p>SHOP BY CATEGORY</p>
+    </div>
+    <div class="cate_in">
+
+        <a href="{% url 'Headphone' %}" class="cate-a">
+            <div class="cate">
+                <div class="cate_view">
+                    <p>Headphones</p>
+                    <p>{{h_count}} products</p>
+                </div>
+                <div class="cate_img">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="512" height="512" x="0" y="0" viewBox="0 0 30 30"
+                        style="enable-background:new 0 0 512 512" xml:space="preserve">
+                        <g>
+                            <path
+                                d="M15 2.995c-6.617 0-12 5.383-12 12v6.51c0 1.33.52 2.59 1.45 3.53l1.38 1.39 2 .58h.03c1.65 0 3-1.35 3-3v-5.9c0-1.65-1.35-3-3-3h-.03l-2 .59-.83.834v-1.534c0-5.514 4.486-10 10-10s10 4.486 10 10v1.533l-.83-.833-2-.59h-.03c-1.65 0-3 1.35-3 3v5.9c0 1.65 1.35 3 3 3h.03l2-.58 1.38-1.39c.93-.94 1.45-2.2 1.45-3.53v-6.51c0-6.617-5.383-12-12-12z"
+                                fill="currentColor" opacity="1" data-original="#000000"></path>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </a>
+        <a href="{% url 'Earbud' %}" class="cate-a">
+
+            <div class="cate">
+                <div class="cate_view">
+                    <p>Ear Buds</p>
+                    <p>{{ e_count }} Products</p>
+                </div>
+                <div class="cate_img">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="512" height="512" x="0" y="0" viewBox="0 0 24 24"
+                        style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+                        <g>
+                            <path
+                                d="M21 10c0 4.397-1.833 6.156-3.605 7.858-.227.218-.457.439-.688.669-.536.536-.941 1.122-1.333 1.687C14.427 21.584 13.447 23 11 23c-1.402 0-2.538-.496-3.283-1.433a1 1 0 0 1 1.566-1.244c.357.449.935.677 1.717.677 1.342 0 1.807-.59 2.729-1.923.422-.609.899-1.299 1.563-1.963.24-.24.48-.471.717-.698 1.671-1.604 2.99-2.871 2.99-6.415 0-5.168-1.832-7-7-7s-7 1.832-7 7a1 1 0 1 1-2 0C3 3.691 5.691 1 12 1s9 2.691 9 9zM8.918 11.331a1 1 0 1 0 1.886-.661c-.285-.816-.877-1.33-1.755-1.547.186-1.598.978-2.122 2.95-2.122 2.299 0 3 .701 3 3 0 2.134-.687 2.553-1.33 2.778a1 1 0 1 0 .66 1.887c2.67-.932 2.67-3.742 2.67-4.666 0-3.411-1.589-5-5-5s-5 1.589-5 5a1 1 0 0 0 1 1c.802 0 .871.199.918.331z"
+                                fill="currentColor" opacity="1" data-original="#000000" class=""></path>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </a>
+        <a href="{% url 'Speaker' %}" class="cate-a">
+            <div class="cate">
+                <div class="cate_view">
+                    <p>Speakers</p>
+                    <p>{{s_count}} products</p>
+                </div>
+                <div class="cate_img">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="512" height="512" x="0" y="0" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512" xml:space="preserve">
+                        <g>
+                            <path
+                                d="M452 46.01v390c0 6.06-3.65 11.53-9.26 13.86-5.84 2.39-12.2.89-16.35-3.25-1.1-1.11-109.03-105.39-216.39-114.69V150.1c107.54-9.29 215.29-113.59 216.39-114.7 4.3-4.29 10.74-5.61 16.35-3.25A15 15 0 0 1 452 46.01zM512 241.01c0 22.17-12.08 41.56-30 51.95v-103.9c17.92 10.39 30 29.78 30 51.95zM232.852 414.857a14.975 14.975 0 0 0 2.168-13.418c-4.199-13.154-7.079-25.565-8.635-36.954-10.15-2.027-20.321-3.344-30.414-3.413.899 9.501 2.384 19.385 4.948 29.938h-22.264c-3.093-9.536-6.004-19.515-8.262-30H90c-4.061 0-7.901-.804-11.86-1.199 7.538 59.487 26.913 109.213 27.929 111.766A15.008 15.008 0 0 0 120 481.011h75c11.658 0 18.849-12.748 12.861-22.705-.19-.32-8.712-15.114-18.071-37.295h30.947a15.007 15.007 0 0 0 12.115-6.154zM90 331.01h90v-180H90c-49.629 0-90 40.371-90 90s40.371 90 90 90z"
+                                fill="currentColor" opacity="1" data-original="#000000"></path>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </a>
+    </div>
+
+        <div class="category-mob">
+            <a href="{% url 'Headphone' %}" class="cate-a">
+                <div class="cate-mob">
+                    <div class="cate-mob-img">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="512" height="512" x="0" y="0" viewBox="0 0 30 30"
+                        style="enable-background:new 0 0 512 512" xml:space="preserve">
+                        <g>
+                            <path
+                                d="M15 2.995c-6.617 0-12 5.383-12 12v6.51c0 1.33.52 2.59 1.45 3.53l1.38 1.39 2 .58h.03c1.65 0 3-1.35 3-3v-5.9c0-1.65-1.35-3-3-3h-.03l-2 .59-.83.834v-1.534c0-5.514 4.486-10 10-10s10 4.486 10 10v1.533l-.83-.833-2-.59h-.03c-1.65 0-3 1.35-3 3v5.9c0 1.65 1.35 3 3 3h.03l2-.58 1.38-1.39c.93-.94 1.45-2.2 1.45-3.53v-6.51c0-6.617-5.383-12-12-12z"
+                                fill="currentColor" opacity="1" data-original="#000000"></path>
+                        </g>
+                    </svg>
+                    </div>
+                    <div class="cate-mob-p">
+                        <p>Headphones</p>
+                        <p>{{h_count}} products</p>
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'Earbud' %}" class="cate-a">
+                <div class="cate-mob">
+                    <div class="cate-mob-img">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="512" height="512" x="0" y="0" viewBox="0 0 24 24"
+                        style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+                        <g>
+                            <path
+                            d="M21 10c0 4.397-1.833 6.156-3.605 7.858-.227.218-.457.439-.688.669-.536.536-.941 1.122-1.333 1.687C14.427 21.584 13.447 23 11 23c-1.402 0-2.538-.496-3.283-1.433a1 1 0 0 1 1.566-1.244c.357.449.935.677 1.717.677 1.342 0 1.807-.59 2.729-1.923.422-.609.899-1.299 1.563-1.963.24-.24.48-.471.717-.698 1.671-1.604 2.99-2.871 2.99-6.415 0-5.168-1.832-7-7-7s-7 1.832-7 7a1 1 0 1 1-2 0C3 3.691 5.691 1 12 1s9 2.691 9 9zM8.918 11.331a1 1 0 1 0 1.886-.661c-.285-.816-.877-1.33-1.755-1.547.186-1.598.978-2.122 2.95-2.122 2.299 0 3 .701 3 3 0 2.134-.687 2.553-1.33 2.778a1 1 0 1 0 .66 1.887c2.67-.932 2.67-3.742 2.67-4.666 0-3.411-1.589-5-5-5s-5 1.589-5 5a1 1 0 0 0 1 1c.802 0 .871.199.918.331z"
+                            fill="currentColor" opacity="1" data-original="#000000" class=""></path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="cate-mob-p">
+                    <p>Ear Buds</p>
+                    <p>{{e_count}} products</p>
+                </div>
+            </div>
+        </a>
+        <a href="{% url 'Speaker' %} " class="cate-a">
+            <div class="cate-mob">
+                <div class="cate-mob-img">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="512" height="512" x="0" y="0" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512" xml:space="preserve">
+                        <g>
+                            <path
+                            d="M452 46.01v390c0 6.06-3.65 11.53-9.26 13.86-5.84 2.39-12.2.89-16.35-3.25-1.1-1.11-109.03-105.39-216.39-114.69V150.1c107.54-9.29 215.29-113.59 216.39-114.7 4.3-4.29 10.74-5.61 16.35-3.25A15 15 0 0 1 452 46.01zM512 241.01c0 22.17-12.08 41.56-30 51.95v-103.9c17.92 10.39 30 29.78 30 51.95zM232.852 414.857a14.975 14.975 0 0 0 2.168-13.418c-4.199-13.154-7.079-25.565-8.635-36.954-10.15-2.027-20.321-3.344-30.414-3.413.899 9.501 2.384 19.385 4.948 29.938h-22.264c-3.093-9.536-6.004-19.515-8.262-30H90c-4.061 0-7.901-.804-11.86-1.199 7.538 59.487 26.913 109.213 27.929 111.766A15.008 15.008 0 0 0 120 481.011h75c11.658 0 18.849-12.748 12.861-22.705-.19-.32-8.712-15.114-18.071-37.295h30.947a15.007 15.007 0 0 0 12.115-6.154zM90 331.01h90v-180H90c-49.629 0-90 40.371-90 90s40.371 90 90 90z"
+                            fill="currentColor" opacity="1" data-original="#000000"></path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="cate-mob-p">
+                    <p>Speakers</p>
+                    <p>{{s_count}} products</p>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+</div>
+<div class="products">
+    <div class="prd-hd">
+        <div class="prod-hd">
+            <p>TRENDING NOW</p>
+        </div>
+        <div class="prd-a">
+            <a href="{% url 'All' %}">View All →</a>
+        </div>
+    </div>
+    <div class="prod_in">
+
+        {% for i in head %}
+        <a href="{% url 'Details' i.id %}" class="Det_page">
+
+            <div class="product">
+                <div class="product_img">
+                    <img src="{{i.c_image.url}}" alt="" class="prod">
+                </div>
+                <div class="product_desc">
+                    <p class="p-cat">{{i.category}}</p>
+                    <p class="p-name">{{i.name}}</p>
+                    <p class="p-desc">{{i.c_desc}}</p>
+                </div>
+                <div class="add_cart">
+                    <p class="p-price">₹{{i.c_price}}</p>
+                    <button>Buy Now</button>
+
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+
+<div class="parent">
+    <div class="pop">
+        <div class="pop_top">
+            <a href="{% url 'Home' %}">
+                <div class="pop_top_svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="512" height="512" x="0" y="0" viewBox="0 0 329.269 329"
+                        style="enable-background:new 0 0 512 512" xml:space="preserve">
+                        <g>
+                            <path
+                                d="M194.8 164.77 323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0"
+                                fill="#000000" opacity="1" data-original="#000000"></path>
+                        </g>
+                    </svg>
+                </div>
+            </a>
+        </div>
+        <div class="success">
+            <img src="{% static 'images/success.png' %}" alt="">
+        </div>
+        <div class="success_p">
+            <a>Order Placed <br> Successfully !</a>
+            <a>Thank you for your order. <br> We've received your order and will <br> start processing it soon</a>
+        </div>
+        <div class="success_svg">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512"
+                height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512"
+                xml:space="preserve">
+                <g>
+                    <path
+                        d="m458.737 422.218-22.865-288.116c-1.425-18.562-17.123-33.103-35.739-33.103H354.97v-2.03C354.97 44.397 310.573 0 256.001 0s-98.969 44.397-98.969 98.969v2.03H111.87c-18.617 0-34.316 14.54-35.736 33.064L53.262 422.257c-1.77 23.075 6.235 46.048 21.961 63.026C90.949 502.261 113.242 512 136.385 512h239.231c23.142 0 45.436-9.738 61.163-26.717 15.726-16.979 23.73-39.951 21.958-63.065zM187.022 98.969c0-38.035 30.945-68.979 68.979-68.979s68.979 30.945 68.979 68.979v2.03H187.022v-2.03zm227.754 365.936c-10.218 11.03-24.124 17.105-39.16 17.105h-239.23c-15.036 0-28.942-6.075-39.16-17.105-10.217-11.031-15.211-25.363-14.063-40.315l22.87-288.195c.232-3.032 2.796-5.406 5.837-5.406h45.162v36.935c0 8.281 6.714 14.995 14.995 14.995 8.281 0 14.995-6.714 14.995-14.995v-36.935H324.98v36.935c0 8.281 6.714 14.995 14.995 14.995s14.995-6.714 14.995-14.995v-36.935h45.163c3.04 0 5.604 2.375 5.84 5.446l22.865 288.115c1.15 14.992-3.845 29.323-14.062 40.355z"
+                        fill="currentColor" opacity="1" data-original="#000000"></path>
+                    <path
+                        d="M323.556 254.285c-5.854-5.856-15.349-5.856-21.204 0l-66.956 66.956-25.746-25.746c-5.855-5.856-15.35-5.856-21.206 0s-5.856 15.35 0 21.206l36.349 36.349c2.928 2.928 6.766 4.393 10.602 4.393s7.675-1.464 10.602-4.393l77.558-77.558c5.857-5.857 5.857-15.351.001-21.207z"
+                        fill="currentColor" opacity="1" data-original="#000000"></path>
+                </g>
+            </svg>
+        </div>
+        <div class="buttons">
+            <a href="{% url 'Home' %}" class="pop_a">
+
+                <div class="button1">
+                    <div class="bt_svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="512" height="512" x="0" y="0" viewBox="0 0 128 128"
+                            style="enable-background:new 0 0 512 512" xml:space="preserve">
+                            <g>
+                                <path
+                                    d="m87.7 33.1-.8-10.8C86 10.4 76 1 64 1s-22.1 9.4-22.9 21.3l-.8 10.8H28.8c-4.7 0-8.6 3.7-9 8.4l-5.4 75.9c-.2 2.5.7 5 2.4 6.8s4.1 2.9 6.6 2.9h81.3c2.5 0 4.9-1 6.6-2.9 1.7-1.8 2.6-4.3 2.4-6.8l-5.4-75.2c-.4-5.1-4.6-9-9.7-9H87.7zM47.1 22.7C47.7 13.9 55.1 7 64 7s16.3 6.9 16.9 15.7l.7 10.4H46.3zm55.2 19.9 5.4 75.2c.1.8-.2 1.6-.8 2.3-.6.6-1.4 1-2.2 1H23.4c-.8 0-1.6-.3-2.2-1s-.9-1.4-.8-2.3l5.4-75.9c.1-1.6 1.4-2.8 3-2.8h11.1l-.6 8c-.1 1.7 1.1 3.1 2.8 3.2h.2c1.6 0 2.9-1.2 3-2.8l.6-8.4h36.2l.6 8.4c.1 1.7 1.5 2.9 3.2 2.8s2.9-1.5 2.8-3.2l-.6-8h10.5c1.9 0 3.5 1.5 3.7 3.5z"
+                                    fill="currentColor" opacity="1" data-original="#000000"></path>
+                            </g>
+                        </svg>
+                    </div>
+                    <p>Continue Shopping</p>
+                </div>
+            </a>
+            <a href="{% url 'Orders' %}" class="pop_a">
+
+                <div class="button2">
+                    <div class="bt_svg1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 3h16v18l-2-1-2 1-2-1-2 1-2-1-2 1-2-1-2 1V3z" />
+                            <path d="M8 7h8" />
+                            <path d="M8 11h8" />
+                            <path d="M8 15h5" />
+                        </svg>
+                    </div>
+                    <p>Visit Orders</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% if ordered %}
+
+<script>
+
+    function Success() {
+        document.querySelector(".parent").style.display = "flex";
+    }
+
+    Success();
+
+</script>
+
+{% endif %}
+{% endblock content %}

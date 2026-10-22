@@ -1,0 +1,304 @@
+.contact-page {
+    padding: 50px 80px 100px;
+    background: #0d0d0d;
+    margin-top: 64px;
+    min-height: calc(100vh - 64px);
+}
+
+.contact-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+.contact-eyebrow::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: #c9a84c;
+    display: block;
+}
+
+.contact-eyebrow span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c9a84c;
+}
+
+.contact-title {
+    font-family: 'Cinzel', serif;
+    font-size: 38px;
+    font-weight: 900;
+    color: #f0ece4;
+    letter-spacing: 2px;
+    margin-bottom: 52px;
+    line-height: 1.2;
+}
+
+.contact-title span { color: #c9a84c; }
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.info-card {
+    background: #111;
+    border: 1px solid #1e1e1e;
+    border-left: 2px solid #c9a84c;
+    border-radius: 0 8px 8px 0;
+    padding: 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.info-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.info-icon svg {
+    width: 16px;
+    height: 16px;
+    color: #c9a84c;
+}
+
+.info-text-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.info-text-val {
+    font-size: 13px;
+    color: #ccc;
+    font-weight: 500;
+}
+
+.hours-card {
+    background: #111;
+    border: 1px solid #1e1e1e;
+    border-radius: 8px;
+    padding: 22px 20px;
+}
+
+.hours-title {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #c9a84c;
+    margin-bottom: 16px;
+}
+
+.hours-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #666;
+    padding: 8px 0;
+    border-bottom: 0.5px solid #1a1a1a;
+    font-weight: 500;
+}
+
+.hours-row:last-child { border-bottom: none; }
+.hours-row span:last-child { color: #999; }
+
+.contact-form-card {
+    background: #1c1c1e;
+    border: 1px solid #1e1e1e;
+    border-radius: 12px;
+    padding: 36px;
+}
+
+.form-row-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666;
+    font-family: 'Raleway', sans-serif;
+}
+
+.form-group input{
+    background: #161616;
+    border: 1px solid #222;
+    border-radius: 6px;
+    color: #d4d4d4;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 12px 14px;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    width: 90%;
+}
+.form-group-email {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.form-group-email label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666;
+    font-family: 'Raleway', sans-serif;
+}
+.form-group-email input{
+    background: #161616;
+    border: 1px solid #222;
+    border-radius: 6px;
+    color: #d4d4d4;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 12px 14px;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    width: 95%;
+}
+.form-group select{
+    background: #161616;
+    border: 1px solid #222;
+    border-radius: 6px;
+    color: #d4d4d4;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 12px 14px;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    width: 100%;
+}
+.form-group textarea {
+    background: #161616;
+    border: 1px solid #222;
+    border-radius: 6px;
+    color: #d4d4d4;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 12px 14px;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    width: 96%;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: rgba(201,168,76,0.5);
+    background: #1a1a1a;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: #444; }
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.7;
+}
+
+.form-group select {
+    appearance: none;
+    cursor: pointer;
+    color: #888;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px #161616 inset !important;
+    -webkit-text-fill-color: #d4d4d4 !important;
+}
+
+.contact-submit-btn {
+    width: 100%;
+    height: 48px;
+    background: #c9a84c;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #0d0d0d;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.contact-submit-btn:hover {
+    background: #e0ba58;
+    transform: translateY(-1px);
+}
+
+.form-note {
+    font-size: 11px;
+    color: #444;
+    text-align: center;
+    margin-top: 14px;
+    letter-spacing: 0.3px;
+    font-family: 'Raleway', sans-serif;
+}
+
+@media screen and (max-width: 800px) {
+    .contact-page { 
+        padding: 60px 24px 80px; 
+    }
+    .contact-grid {
+        grid-template-columns: 1fr; 
+    }
+    .form-row-split { 
+        grid-template-columns: 1fr; 
+    }
+    .form-group input{
+        width: 95%;
+    }
+}
+@media screen and (max-width: 380px) {
+    
+    .form-group select{
+        width: 108%;
+    }
+}

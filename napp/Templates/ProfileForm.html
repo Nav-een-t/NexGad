@@ -1,0 +1,117 @@
+{% extends "Base.html" %}
+
+{% load static %}
+
+{% block title %}
+Edit Profile — NEXGAD
+{% endblock title %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock page_css %}
+
+{% block content %}
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+<div class="profile">
+    <div class="profile-left">
+        <div class="profile-left-card">
+            <div class="profile-left-card-top">
+                <div class="profile-image">
+                    {% if profile.image %}
+                    <img src="{{ profile.image.url }}" alt="">
+                    {% else %}
+                    <span class="profile-pic-name">{{ profile_pic }}</span>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="profile-left-card-name">
+                <a>{{ request.user.first_name }} {{ request.user.last_name }}</a>
+                <a>@{{ request.user.username }}</a>
+            </div>
+            <div class="profile-pic-updation">
+                
+                <input type="file" name="pic" id="profile-pic-input" accept="image/*" style="display: none;">
+                <label for="profile-pic-input">
+
+                    <div class="profile-pic-update">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 16V4" />
+                        <path d="M8 8l4-4 4 4" />
+                        <path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" />
+                    </svg>
+                    <p>Upload Photo</p>
+                </div>
+            </label>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="profile-right">
+        <div class="profile-right-form">
+            <div class="profile-right-form-top">
+                <div class="personal-info">
+                    <div class="personal-info-svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="512" height="512" x="0" y="0" viewBox="0 0 24 24"
+                            style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+                            <g>
+                                <g data-name="01 align center">
+                                    <path
+                                        d="M21 24h-2v-5.043A2.96 2.96 0 0 0 16.043 16H7.957A2.96 2.96 0 0 0 5 18.957V24H3v-5.043A4.963 4.963 0 0 1 7.957 14h8.086A4.963 4.963 0 0 1 21 18.957ZM12 12a6 6 0 1 1 6-6 6.006 6.006 0 0 1-6 6Zm0-10a4 4 0 1 0 4 4 4 4 0 0 0-4-4Z"
+                                        fill="currentColor" opacity="1" data-original="#000000" class=""></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="personal-info-text">
+                        <p>Edit Profile</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="profile-right-form-mid">
+                    <div class="full-name">
+                        <div class="first-name">
+                            <label for="">First Name</label>
+                            <input type="text" placeholder="First Name" name="first_name" value="{{ request.user.first_name }}">
+                        </div>
+                        <div class="first-name">
+                            <label for="">Last Name</label>
+                            <input type="text" placeholder="Last Name" name="last_name" value="{{ request.user.last_name }}">
+                        </div>
+                    </div>
+                    <div class="full-name">
+                        <div class="form-email">
+                            <label for="">Username</label>
+                            <input type="text" placeholder="Username" value="{{ request.user.username }}" disabled>
+                        </div>
+                    </div>
+                    <div class="full-name">
+                        <div class="first-name">
+                            <label for="">Email</label>
+                            <input type="text" placeholder="Email" name="email" value="{{ request.user.email }}" disabled>
+                        </div>
+                        <div class="first-name">
+                            <label for="">phone</label>
+                            <input type="tel" placeholder="Phone Number" minlength="10" maxlength="10" name="phone" value="{{ profile.phone }}">
+                        </div>
+                    </div>
+                    <div class="full-name">
+                        <div class="form-bio">
+                            <label for="">Bio</label>
+                            <textarea name="bio" id="" placeholder="Bio">{{ profile.bio }}</textarea>
+                        </div>
+                    </div>
+                    <div class="full-name">
+                        <button type="submit">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</form>
+{% endblock content %}
