@@ -221,7 +221,7 @@ def all_items(request):
     else:
         filteredProduct = Product.objects.all()
     q_count=filteredProduct.count()
-    return render(request,'ShopAll.html', {'data':filteredProduct, 'query':query, 'product':product,'count':count,'q_count':q_count})
+    return render(request,'Shopall.html', {'data':filteredProduct, 'query':query, 'product':product,'count':count,'q_count':q_count})
 
 
 
