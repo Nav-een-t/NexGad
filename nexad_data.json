@@ -1,0 +1,1011 @@
+[
+{
+  "model": "napp.category",
+  "pk": 1,
+  "fields": {
+    "category": "Speaker"
+  }
+},
+{
+  "model": "napp.category",
+  "pk": 2,
+  "fields": {
+    "category": "Headphone"
+  }
+},
+{
+  "model": "napp.category",
+  "pk": 3,
+  "fields": {
+    "category": "Ear Buds"
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name": "Marshall Willen II",
+    "c_image": "products/sm6_CeSM3iP.jpg",
+    "hover_image": "",
+    "c_desc": "17+ Hours Playtime, IP67 Waterproof, 10W Bluetooth Speaker",
+    "c_price": 21999
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 2,
+  "fields": {
+    "category": 2,
+    "name": "boAt Rockerz 413",
+    "c_image": "products/head3_x17tNsx.jpg",
+    "hover_image": "products/head3_hov_TwwmaKO.jpg",
+    "c_desc": "60H battery, ENx, BEAST Mode, Dual Pair, Bluetooth Headphone",
+    "c_price": 16999
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 3,
+  "fields": {
+    "category": 3,
+    "name": "REDMI Buds 6",
+    "c_image": "products/ear3_kOC0Skc.jpg",
+    "hover_image": "products/ear3_hov_8XPGp7H.jpg",
+    "c_desc": "49dB Hybrid ANC, Spatial Audio, Dual Driver Sound, Bluetooth Ear Buds",
+    "c_price": 2999
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 4,
+  "fields": {
+    "category": 1,
+    "name": "JBL Go 4",
+    "c_image": "products/sm5_ayO94IH.jpg",
+    "hover_image": "",
+    "c_desc": "Pro Sound Audio, IP67 Water & Dustproof, 7H Playtime, Bluetooth Speaker",
+    "c_price": 3499
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 5,
+  "fields": {
+    "category": 3,
+    "name": "Noise Ear Buds",
+    "c_image": "products/ear8_QjCAr8w.jpg",
+    "hover_image": "",
+    "c_desc": "Noise Buds VS102 Neo with 40 Hrs Playtime, ENC, Quad Mic Bluetooth Gaming Wireless Ear Buds",
+    "c_price": 2899
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 6,
+  "fields": {
+    "category": 2,
+    "name": "JBL Headphone",
+    "c_image": "products/head2.jpg",
+    "hover_image": "products/head2_hov.jpg",
+    "c_desc": "JBL Tune 770NC ANC, 70Hr Playtime, Fast Pair & Multi Connect Bluetooth Gaming Headphone (Black, On the Ear)",
+    "c_price": 5499
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 7,
+  "fields": {
+    "category": 1,
+    "name": "GOVO Goloud 980",
+    "c_image": "products/sm8_c3CEkIg.jpg",
+    "hover_image": "",
+    "c_desc": "160 W Bluetooth Party Speaker (Platinum Black, 2.0 Channel)",
+    "c_price": 8498
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 8,
+  "fields": {
+    "category": 2,
+    "name": "Marshall Major IV",
+    "c_image": "products/head5_t07OD28.jpg",
+    "hover_image": "",
+    "c_desc": "Bluetooth Headset (Black, On the Ear)",
+    "c_price": 11998
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 9,
+  "fields": {
+    "category": 3,
+    "name": "Samsung Galaxy Buds4 Pro",
+    "c_image": "products/ear1_bqhUXtO.jpg",
+    "hover_image": "",
+    "c_desc": "Hi-Fi Audio, Voice Detect, 2-way Speaker, Adaptive ANC 2.0 Bluetooth Ear Buds (Black, In the Ear)",
+    "c_price": 22998
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 10,
+  "fields": {
+    "category": 2,
+    "name": "Noise Airwave Max 4",
+    "c_image": "products/head4_7JY4ySX.jpg",
+    "hover_image": "",
+    "c_desc": "70 Hours Playtime,ENC wiith Dual pairing & Ultra-low latency Bluetooth Headset (Carbon Black, On the Ear)",
+    "c_price": 3499
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 11,
+  "fields": {
+    "category": 1,
+    "name": "Marshall Emberton II",
+    "c_image": "products/sm_m_KuhTIyf.jpg",
+    "hover_image": "",
+    "c_desc": "30+Hour Playtime, 360degree Sound, Waterproof 20 W Bluetooth Speaker (Black, Brass, Stereo Channel)",
+    "c_price": 14999
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 12,
+  "fields": {
+    "category": 3,
+    "name": "Samsung Galaxy Buds3 FE",
+    "c_image": "products/ear2_PjBnKUV.jpg",
+    "hover_image": "",
+    "c_desc": "Bluetooth Ear Buds (Black, True Wireless)",
+    "c_price": 11499
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 13,
+  "fields": {
+    "category": 1,
+    "name": "Bose New SoundLink Max",
+    "c_image": "products/sm8_cpNaBN5.jpg",
+    "hover_image": "",
+    "c_desc": "Large Waterproof Up to 20 Hours of Battery Life Bluetooth Speaker (Black, Mono Channel)",
+    "c_price": 37900
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 14,
+  "fields": {
+    "category": 2,
+    "name": "Bose QuietComfort Ultra",
+    "c_image": "products/headp_3xszz7z.jpg",
+    "hover_image": "",
+    "c_desc": "Bluetooth Headphones (2nd Gen) Bluetooth & Wired Headset (Black, On the Ear)",
+    "c_price": 49900
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 15,
+  "fields": {
+    "category": 3,
+    "name": "Nothing Ear (2) 2023",
+    "c_image": "products/nthng_jY42qAO.jpg",
+    "hover_image": "",
+    "c_desc": "Dual chamber sound | Hi-res audio | Smart ANC | Dual connection Bluetooth Ear Buds (Black, True Wireless)",
+    "c_price": 7999
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 16,
+  "fields": {
+    "category": 2,
+    "name": "boAt Rockerz 650 Pro(2025 Launch)",
+    "c_image": "products/head_last_wjkhsaS.jpg",
+    "hover_image": "",
+    "c_desc": "Touch/Swipe Controls, Dolby Audio, 80 Hrs Battery Bluetooth Headset (Iris Black, On the Ear)",
+    "c_price": 2799
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 17,
+  "fields": {
+    "category": 3,
+    "name": "Bose QuietComfort II",
+    "c_image": "products/ear_last_2koogQl.jpg",
+    "hover_image": "",
+    "c_desc": "Wireless,in-Ear Earbuds with Personalized Noise Cancellation Bluetooth Ear Buds (Black)",
+    "c_price": 14989
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 18,
+  "fields": {
+    "category": 1,
+    "name": "Alexa Echo (4th Gen)",
+    "c_image": "products/alexa_5yNPLRu.jpg",
+    "hover_image": "",
+    "c_desc": "Premium sound powered by Dolby and Alexa with Alexa Assistant Smart Speaker (Black)",
+    "c_price": 9998
+  }
+},
+{
+  "model": "napp.product",
+  "pk": 19,
+  "fields": {
+    "category": 2,
+    "name": "Headphone",
+    "c_image": "products/head3_I9UDfx7.jpg",
+    "hover_image": "",
+    "c_desc": "Headphone",
+    "c_price": 12499
+  }
+},
+{
+  "model": "napp.profile",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "image": "",
+    "phone": "+91 7851585167",
+    "bio": "NexGad — Discover the next generation of gadgets. Reviews, insights, and tech that keeps you ahead."
+  }
+},
+{
+  "model": "napp.profile",
+  "pk": 2,
+  "fields": {
+    "user": 24,
+    "image": "",
+    "phone": "+91 9072515352",
+    "bio": "No bio added yet"
+  }
+},
+{
+  "model": "napp.profile",
+  "pk": 3,
+  "fields": {
+    "user": 16,
+    "image": "Profile/wolf.jpg",
+    "phone": "+91 7851585167",
+    "bio": "No bio added yet"
+  }
+},
+{
+  "model": "napp.profile",
+  "pk": 4,
+  "fields": {
+    "user": 25,
+    "image": "",
+    "phone": "7851585167",
+    "bio": "No bio added yet"
+  }
+},
+{
+  "model": "napp.profile",
+  "pk": 5,
+  "fields": {
+    "user": 18,
+    "image": "",
+    "phone": null,
+    "bio": "No bio added yet"
+  }
+},
+{
+  "model": "napp.profile",
+  "pk": 6,
+  "fields": {
+    "user": 26,
+    "image": "",
+    "phone": null,
+    "bio": "No bio added yet"
+  }
+},
+{
+  "model": "napp.cart",
+  "pk": 91,
+  "fields": {
+    "user": 16,
+    "product": 2,
+    "quantity": 1
+  }
+},
+{
+  "model": "napp.cart",
+  "pk": 113,
+  "fields": {
+    "user": 24,
+    "product": 8,
+    "quantity": 2
+  }
+},
+{
+  "model": "napp.cart",
+  "pk": 123,
+  "fields": {
+    "user": 24,
+    "product": 1,
+    "quantity": 3
+  }
+},
+{
+  "model": "napp.address",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "first_name": "Naveen",
+    "last_name": "T",
+    "phone": 9072515352,
+    "alt_phone": 9578463210,
+    "adress": "Thamarathodi house Amarambalam South P.O Amrambalam South",
+    "city": "Nilambur",
+    "pin_code": 679329,
+    "state": "Kerala",
+    "land_mark": "fg",
+    "payment": "Cash On Delivery"
+  }
+},
+{
+  "model": "napp.address",
+  "pk": 2,
+  "fields": {
+    "user": 1,
+    "first_name": "Naveen",
+    "last_name": "T",
+    "phone": 9072515352,
+    "alt_phone": 9578463210,
+    "adress": "Thamarathodi house Amarambalam South P.O Amrambalam South",
+    "city": "Nilambur",
+    "pin_code": 679329,
+    "state": "Kerala",
+    "land_mark": "Near Amal College",
+    "payment": "COD"
+  }
+},
+{
+  "model": "napp.address",
+  "pk": 3,
+  "fields": {
+    "user": 24,
+    "first_name": "Naveen",
+    "last_name": "T",
+    "phone": 7851585167,
+    "alt_phone": 9578463210,
+    "adress": "Thamarathodi house Amarambalam South P.O Amrambalam South",
+    "city": "Nilambur",
+    "pin_code": 679329,
+    "state": "Kerala",
+    "land_mark": "",
+    "payment": "Cash On Delivery"
+  }
+},
+{
+  "model": "napp.address",
+  "pk": 4,
+  "fields": {
+    "user": 24,
+    "first_name": "Naveen",
+    "last_name": "T",
+    "phone": 7851585167,
+    "alt_phone": 9578463210,
+    "adress": "Thamarathodi house Amarambalam South P.O Amrambalam South",
+    "city": "Nilambur",
+    "pin_code": 679329,
+    "state": "Kerala",
+    "land_mark": "",
+    "payment": "Cash On Delivery"
+  }
+},
+{
+  "model": "napp.address",
+  "pk": 5,
+  "fields": {
+    "user": 16,
+    "first_name": "Naveen",
+    "last_name": "T",
+    "phone": 7851585167,
+    "alt_phone": 9578463210,
+    "adress": "Thamarathodi house Amarambalam South P.O Amrambalam South",
+    "city": "Nilambur",
+    "pin_code": 679329,
+    "state": "Kerala",
+    "land_mark": "",
+    "payment": "Cash On Delivery"
+  }
+},
+{
+  "model": "napp.address",
+  "pk": 6,
+  "fields": {
+    "user": 24,
+    "first_name": "Naveen",
+    "last_name": "T",
+    "phone": 9072515352,
+    "alt_phone": 9578463210,
+    "adress": "Thamarathodi house Amarambalam South P.O Amrambalam South",
+    "city": "Nilambur",
+    "pin_code": 679329,
+    "state": "Kerala",
+    "land_mark": "",
+    "payment": "Cash On Delivery"
+  }
+},
+{
+  "model": "napp.address",
+  "pk": 7,
+  "fields": {
+    "user": 25,
+    "first_name": "Naveen",
+    "last_name": "T",
+    "phone": 7851585167,
+    "alt_phone": 9578463210,
+    "adress": "Thamarathodi house Amarambalam South P.O Amrambalam South",
+    "city": "Nilambur",
+    "pin_code": 679329,
+    "state": "Kerala",
+    "land_mark": "",
+    "payment": "Cash On Delivery"
+  }
+},
+{
+  "model": "napp.address",
+  "pk": 8,
+  "fields": {
+    "user": 25,
+    "first_name": "Aparna",
+    "last_name": "Rajan",
+    "phone": 7851585167,
+    "alt_phone": 9578463210,
+    "adress": "Suha Digitech, Nilambur",
+    "city": "Nilambur",
+    "pin_code": 679329,
+    "state": "Kerala",
+    "land_mark": "Near Teak Museum",
+    "payment": "Cash On Delivery"
+  }
+},
+{
+  "model": "napp.address",
+  "pk": 9,
+  "fields": {
+    "user": 25,
+    "first_name": "Aparna",
+    "last_name": "Rajan",
+    "phone": 7851585167,
+    "alt_phone": 9578463210,
+    "adress": "Suha Digitech, Nilambur",
+    "city": "Nilambur",
+    "pin_code": 679329,
+    "state": "Kerala",
+    "land_mark": "Near Teak Museum",
+    "payment": "Cash On Delivery"
+  }
+},
+{
+  "model": "napp.address",
+  "pk": 10,
+  "fields": {
+    "user": 25,
+    "first_name": "Aparna",
+    "last_name": "Rajan",
+    "phone": 9851247630,
+    "alt_phone": 9578463210,
+    "adress": "Suha Digitech, Nilambur",
+    "city": "Nilambur",
+    "pin_code": 679329,
+    "state": "Kerala",
+    "land_mark": "Near Teak Museum",
+    "payment": "Cash On Delivery"
+  }
+},
+{
+  "model": "napp.address",
+  "pk": 11,
+  "fields": {
+    "user": 25,
+    "first_name": "Aparna",
+    "last_name": "Rajan",
+    "phone": 9784563210,
+    "alt_phone": 9578463210,
+    "adress": "Thamarathodi house Amarambalam South P.O Amrambalam South",
+    "city": "Nilambur",
+    "pin_code": 679329,
+    "state": "Kerala",
+    "land_mark": "",
+    "payment": "Cash On Delivery"
+  }
+},
+{
+  "model": "napp.address",
+  "pk": 12,
+  "fields": {
+    "user": 26,
+    "first_name": "Adith",
+    "last_name": "Raj",
+    "phone": 7851585167,
+    "alt_phone": 9578463210,
+    "adress": "Raj Bhavan,",
+    "city": "Nilambur",
+    "pin_code": 679329,
+    "state": "Kerala",
+    "land_mark": "",
+    "payment": "Cash On Delivery"
+  }
+},
+{
+  "model": "napp.address",
+  "pk": 13,
+  "fields": {
+    "user": 26,
+    "first_name": "Adith",
+    "last_name": "Raj",
+    "phone": 7851585167,
+    "alt_phone": 9578463210,
+    "adress": "Raj Bhavan",
+    "city": "Nilambur",
+    "pin_code": 679329,
+    "state": "Kerala",
+    "land_mark": "",
+    "payment": "Cash On Delivery"
+  }
+},
+{
+  "model": "napp.address",
+  "pk": 14,
+  "fields": {
+    "user": 26,
+    "first_name": "Adith",
+    "last_name": "Raj",
+    "phone": 7851585167,
+    "alt_phone": 9578463210,
+    "adress": "Raj Bhavan",
+    "city": "Nilambur",
+    "pin_code": 679329,
+    "state": "Kerala",
+    "land_mark": "",
+    "payment": "Cash On Delivery"
+  }
+},
+{
+  "model": "napp.address",
+  "pk": 15,
+  "fields": {
+    "user": 26,
+    "first_name": "Adith",
+    "last_name": "Raj",
+    "phone": 7851585167,
+    "alt_phone": 9578463210,
+    "adress": "Raj Bhavan",
+    "city": "Nilambur",
+    "pin_code": 679329,
+    "state": "Kerala",
+    "land_mark": "",
+    "payment": "Cash On Delivery"
+  }
+},
+{
+  "model": "napp.address",
+  "pk": 16,
+  "fields": {
+    "user": 25,
+    "first_name": "Aparna",
+    "last_name": "Rajan",
+    "phone": 7851585167,
+    "alt_phone": 9578463210,
+    "adress": "Raj Bhavan",
+    "city": "Nilambur",
+    "pin_code": 679329,
+    "state": "Kerala",
+    "land_mark": "",
+    "payment": "Cash On Delivery"
+  }
+},
+{
+  "model": "napp.order",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "date_time": "2026-06-11T13:46:57.659Z",
+    "address": 1
+  }
+},
+{
+  "model": "napp.order",
+  "pk": 2,
+  "fields": {
+    "user": 1,
+    "date_time": "2026-06-11T13:47:29.470Z",
+    "address": 1
+  }
+},
+{
+  "model": "napp.order",
+  "pk": 3,
+  "fields": {
+    "user": 1,
+    "date_time": "2026-06-11T14:09:42.479Z",
+    "address": 1
+  }
+},
+{
+  "model": "napp.order",
+  "pk": 4,
+  "fields": {
+    "user": 1,
+    "date_time": "2026-06-11T14:19:43.214Z",
+    "address": 1
+  }
+},
+{
+  "model": "napp.order",
+  "pk": 5,
+  "fields": {
+    "user": 1,
+    "date_time": "2026-06-12T04:21:23.000Z",
+    "address": 2
+  }
+},
+{
+  "model": "napp.order",
+  "pk": 6,
+  "fields": {
+    "user": 24,
+    "date_time": "2026-06-12T06:31:36.720Z",
+    "address": 3
+  }
+},
+{
+  "model": "napp.order",
+  "pk": 7,
+  "fields": {
+    "user": 24,
+    "date_time": "2026-06-12T06:32:32.662Z",
+    "address": 4
+  }
+},
+{
+  "model": "napp.order",
+  "pk": 8,
+  "fields": {
+    "user": 16,
+    "date_time": "2026-06-12T06:36:40.589Z",
+    "address": 5
+  }
+},
+{
+  "model": "napp.order",
+  "pk": 9,
+  "fields": {
+    "user": 24,
+    "date_time": "2026-06-12T08:12:33.446Z",
+    "address": 6
+  }
+},
+{
+  "model": "napp.order",
+  "pk": 10,
+  "fields": {
+    "user": 25,
+    "date_time": "2026-06-15T06:22:12.470Z",
+    "address": 7
+  }
+},
+{
+  "model": "napp.order",
+  "pk": 11,
+  "fields": {
+    "user": 25,
+    "date_time": "2026-06-15T14:37:34.288Z",
+    "address": 8
+  }
+},
+{
+  "model": "napp.order",
+  "pk": 12,
+  "fields": {
+    "user": 25,
+    "date_time": "2026-06-15T14:44:33.198Z",
+    "address": 9
+  }
+},
+{
+  "model": "napp.order",
+  "pk": 13,
+  "fields": {
+    "user": 25,
+    "date_time": "2026-06-15T14:46:29.063Z",
+    "address": 10
+  }
+},
+{
+  "model": "napp.order",
+  "pk": 14,
+  "fields": {
+    "user": 25,
+    "date_time": "2026-06-17T04:37:39.413Z",
+    "address": 11
+  }
+},
+{
+  "model": "napp.order",
+  "pk": 17,
+  "fields": {
+    "user": 26,
+    "date_time": "2026-06-29T06:15:06.758Z",
+    "address": 14
+  }
+},
+{
+  "model": "napp.order",
+  "pk": 18,
+  "fields": {
+    "user": 26,
+    "date_time": "2026-06-29T06:15:44.305Z",
+    "address": 15
+  }
+},
+{
+  "model": "napp.order",
+  "pk": 19,
+  "fields": {
+    "user": 25,
+    "date_time": "2026-06-29T06:20:04.029Z",
+    "address": 16
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "product": 3,
+    "quantity": 2
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "product": 2,
+    "quantity": 3
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 3,
+  "fields": {
+    "order": 2,
+    "product": 4,
+    "quantity": 2
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 4,
+  "fields": {
+    "order": 3,
+    "product": 5,
+    "quantity": 2
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 5,
+  "fields": {
+    "order": 4,
+    "product": 3,
+    "quantity": 1
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 6,
+  "fields": {
+    "order": 5,
+    "product": 1,
+    "quantity": 1
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 7,
+  "fields": {
+    "order": 6,
+    "product": 3,
+    "quantity": 1
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 8,
+  "fields": {
+    "order": 7,
+    "product": 2,
+    "quantity": 2
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 9,
+  "fields": {
+    "order": 7,
+    "product": 4,
+    "quantity": 1
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 10,
+  "fields": {
+    "order": 8,
+    "product": 1,
+    "quantity": 1
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 11,
+  "fields": {
+    "order": 9,
+    "product": 1,
+    "quantity": 1
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 12,
+  "fields": {
+    "order": 10,
+    "product": 2,
+    "quantity": 1
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 13,
+  "fields": {
+    "order": 11,
+    "product": 1,
+    "quantity": 1
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 14,
+  "fields": {
+    "order": 11,
+    "product": 4,
+    "quantity": 1
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 15,
+  "fields": {
+    "order": 12,
+    "product": 5,
+    "quantity": 3
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 16,
+  "fields": {
+    "order": 12,
+    "product": 8,
+    "quantity": 2
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 17,
+  "fields": {
+    "order": 13,
+    "product": 11,
+    "quantity": 1
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 18,
+  "fields": {
+    "order": 13,
+    "product": 6,
+    "quantity": 1
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 19,
+  "fields": {
+    "order": 13,
+    "product": 14,
+    "quantity": 1
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 20,
+  "fields": {
+    "order": 14,
+    "product": 18,
+    "quantity": 1
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 24,
+  "fields": {
+    "order": 17,
+    "product": 1,
+    "quantity": 1
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 25,
+  "fields": {
+    "order": 18,
+    "product": 1,
+    "quantity": 1
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 26,
+  "fields": {
+    "order": 18,
+    "product": 5,
+    "quantity": 1
+  }
+},
+{
+  "model": "napp.orderitem",
+  "pk": 27,
+  "fields": {
+    "order": 19,
+    "product": 2,
+    "quantity": 2
+  }
+},
+{
+  "model": "napp.wishlist",
+  "pk": 2,
+  "fields": {
+    "user": 1,
+    "product": 1
+  }
+},
+{
+  "model": "napp.wishlist",
+  "pk": 6,
+  "fields": {
+    "user": 26,
+    "product": 1
+  }
+},
+{
+  "model": "napp.wishlist",
+  "pk": 7,
+  "fields": {
+    "user": 24,
+    "product": 1
+  }
+},
+{
+  "model": "napp.wishlist",
+  "pk": 8,
+  "fields": {
+    "user": 16,
+    "product": 1
+  }
+}
+]
