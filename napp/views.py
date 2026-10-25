@@ -38,21 +38,21 @@ from django.contrib.auth import authenticate,login
 from django.contrib.auth.forms import AuthenticationForm
 
 def user_login(request):
-    if request.method=='POST':
-        form=AuthenticationForm(request,data=request.POST)
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
-            username=form.cleaned_data.get('username')
-            password=form.cleaned_data.get('password')
-            user=authenticate(username=username,password=password)
-            if user is not None:
-                login(request,user)
-                user_name=form.cleaned_data.get('username')
-                messages.success(request,f'Logged in as {user_name}')
-                return redirect(index)
-            
+            user = form.get_user()
+            login(request, user)
+            messages.success(request, f'Logged in as {user.get_username()}')
+            return redirect('index')
     else:
-        form=AuthenticationForm()
-    return render(request,'Login.html',{'form':form,'hide_nav':True})
+        form = AuthenticationForm()
+
+    return render(request, 'Login.html', {
+        'form': form,
+        'hide_nav': True,
+    })
+
 
 from django.contrib import messages
 from .forms import createUser
