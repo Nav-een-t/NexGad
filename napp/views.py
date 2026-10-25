@@ -44,7 +44,7 @@ def user_login(request):
             user = form.get_user()
             login(request, user)
             messages.success(request, f'Logged in as {user.get_username()}')
-            return redirect('index')
+            return redirect('Home')
     else:
         form = AuthenticationForm()
 
