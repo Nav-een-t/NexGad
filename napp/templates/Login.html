@@ -21,6 +21,16 @@
             <div class="form-box">
                 <div class="form-box-title">Sign In</div>
 
+{% if form.errors %}
+    <div style="color: red; margin-bottom: 12px;">
+        {% for field, errors in form.errors.items %}
+            {% for error in errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endif %}
+
                 <form method="POST" action="{% url 'Login' %}">
                     {% csrf_token %}
                     <div class="auth-fg">
