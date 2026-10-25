@@ -31,7 +31,15 @@ SECRET_KEY = os.environ.get(
 
 DEBUG = os.environ.get("DEBUG", "True").lower() == "true"
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "nexgad-fs8g.onrender.com",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://nexgad-fs8g.onrender.com",
+]
 
 render_host = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
 if render_host:
@@ -149,12 +157,20 @@ USE_TZ = True
 
 
 import os
-
 CLOUDINARY_STORAGE = {
-    "CLOUD_NAME": os.environ.get("CLOUDINARY_CLOUD_NAME"),
+    "CLOUD_NAME": os.environ.get("CLOUDINARY_CLOUD_NAME") or "wwjpp8wu",
     "API_KEY": os.environ.get("CLOUDINARY_API_KEY"),
     "API_SECRET": os.environ.get("CLOUDINARY_API_SECRET"),
 }
+
+import cloudinary
+
+cloudinary.config(
+    cloud_name=CLOUDINARY_STORAGE["CLOUD_NAME"],
+    api_key=CLOUDINARY_STORAGE["API_KEY"],
+    api_secret=CLOUDINARY_STORAGE["API_SECRET"],
+    secure=True,
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
