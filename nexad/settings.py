@@ -41,6 +41,8 @@ CSRF_TRUSTED_ORIGINS = [
     "https://nexgad-fs8g.onrender.com",
 ]
 
+CSRF_COOKIE_SECURE = True
+
 render_host = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
 if render_host:
     ALLOWED_HOSTS.append(render_host)
