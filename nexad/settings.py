@@ -36,6 +36,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "nexgad-fs8g.onrender.com",
 ]
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 CSRF_TRUSTED_ORIGINS = [
     "https://nexgad-fs8g.onrender.com",
