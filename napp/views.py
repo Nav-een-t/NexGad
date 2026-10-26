@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import *
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import ensure_csrf_cookie
 
 # Create your views here.
 def index(request):
@@ -37,6 +38,7 @@ def speaker(request):
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.forms import AuthenticationForm
 
+@ensure_csrf_cookie
 def user_login(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
